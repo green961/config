@@ -1,0 +1,733 @@
+{
+  "pcp": {
+    "prefix": "pcp",
+    // "body": "public class ${1:Program} {\n\t$0\n}"
+    "body": "public class ${0:Program} {\n}"
+  },
+  "prs": {
+    "prefix": "prs",
+    "body": "private readonly string "
+  },
+  "pov": {
+    "prefix": "pov",
+    "body": "${1|protected override void,public override void|} "
+  },
+  "pav": {
+    "prefix": "pav",
+    "body": "public abstract void "
+  },
+  "ee": {
+    "prefix": "ee",
+    "body": "event EventHandler "
+  },
+  "l": {
+    "prefix": "l",
+
+    // Console.WriteLine(f); 不需要引号
+    // 在单行箭头函数内, 不需要`;` 但这种场景极少
+    // () => Console.WriteLine("-a option selected"));
+
+    "body": "Console.WriteLine($0);"
+  },
+  "na": {
+    "prefix": "na",
+    //  paramName: nameof(sellerName)
+    "body": "nameof("
+  },
+  "psd": {
+    "prefix": "psd",
+    "body": "public static double "
+  },
+  "pb": {
+    "prefix": "pb",
+    "body": "${1|public bool,private bool|} "
+  },
+  "lm": {
+    "prefix": "lm",
+    "body": "Console.WriteLine($\"$0\");"
+  },
+  "lw": {
+    "prefix": "lw",
+    "body": "Console.Write($0);"
+  },
+  "lwm": {
+    "prefix": "lwm",
+    "body": "Console.Write($\"$0\");"
+  },
+  "co": {
+    "prefix": "co",
+    // Temp.Cel(Console.ReadLine() ?? "0"); 在括号内不需要`;`
+    "body": "Console.$0"
+  },
+  "psc": {
+    "prefix": "psc",
+    "body": "${1|public static class,public sealed class|} "
+  },
+  "pi": {
+    "prefix": "pi",
+    // "body": "public ${1|int,interface|} "
+    "body": "${1|public int,public interface,protected int,private int,partial interface|} "
+  },
+  "p": {
+    "prefix": "p",
+    "body": "params "
+  },
+  "pl": {
+    "prefix": "pl",
+    "body": "private List<"
+  },
+  "ac": {
+    "prefix": "ac",
+    "body": "abstract class "
+  },
+  "psv": {
+    "prefix": "psv",
+    "body": "public static void "
+  },
+  "pv": {
+    "prefix": "pv",
+    "body": "${1|public void,private void|} "
+  },
+  "psii": {
+    "prefix": "psii",
+    "body": "public static IEnumerable<int>"
+  },
+  "ii": {
+    "prefix": "ii",
+    "body": "IEnumerable<int>"
+  },
+  "uv": {
+    "prefix": "uv",
+    "body": "using var "
+  },
+  "sn": {
+    "prefix": "sn",
+    "body": "select new "
+  },
+  "pos": {
+    "prefix": "pos",
+    "body": "public override string "
+  },
+  "th": {
+    "prefix": "th",
+    // static string FullName(this Domain v)
+    "body": "this "
+  },
+
+  "b": {
+    "prefix": "b",
+    // 2 * base.Area()
+    // : base(radius, 0)
+    // byte number2 = 0;
+    "body": "byte " // 尾不带空格
+  },
+  "srl": {
+    "prefix": "srl",
+    "body": "static readonly long "
+  },
+  "psr": {
+    "prefix": "psr",
+    "body": "protected static readonly DateTime "
+  },
+
+  "us": {
+    "prefix": "u",
+    "body": "using "
+  },
+  "ai": {
+    "prefix": "ai",
+    "body": "await "
+  },
+
+  "fi": {
+    "prefix": "fi",
+    "body": "from $1 in "
+  },
+  "sl": {
+    "prefix": "sl",
+    //  select new { U = w.ToUpper(), L = w.ToLower() };
+    "body": "select new { $0 };"
+  },
+  "yr": {
+    "prefix": "yr",
+    "body": "yield return "
+  },
+  "se": {
+    "prefix": "se",
+    "body": "sealed "
+  },
+  "gp": {
+    "prefix": "gp",
+    "body": "group $1 by "
+  },
+  "ta": {
+    "prefix": "ta",
+
+    // await Task.Delay(100); 调用 Task 的方法
+    // static async Task<int> DelayAsync() {  带泛型
+    // static async Task DoSomethingAsync() { 不带泛型, 带个空格好接 of
+
+    "body": "Task "
+  },
+
+  "fch": {
+    "prefix": "fch",
+    "body": "foreach ($0 in $1) {\n}\n"
+  },
+  "fchh": {
+    "prefix": "fchh",
+    "body": [
+      "foreach (var aa in $0) {",
+      "\tConsole.WriteLine(aa);",
+      "}", // 下面的分割线很有必要
+      "Console.WriteLine(\"--------------------------------\");\n"
+    ]
+  },
+  "gs": {
+    "prefix": "gs",
+    "body": "{ ${1|get;,get; set;,get; private set;,get; init;|} }"
+  },
+  "in": {
+    "prefix": "in",
+    // 需要补充用例
+    // "body": "is ${1|null,not |}"
+    "body": "is null"
+  },
+  "inn": {
+    "prefix": "inn",
+    "body": "is not null"
+  },
+
+  "j": {
+    "prefix": "j",
+    // set  => 输入`set`后, 因为需要输入个空格隔开, 所以前面不需要空格
+    "body": "=> "
+  },
+  "so": {
+    "prefix": "so",
+    "body": "sealed override "
+  },
+  // "ov": {
+  //   "prefix": "ov",
+  //   "body": "override "
+  // },
+  "e": {
+    "prefix": "e",
+    // "body": "if $2${1| ,;|} err != nil {\n\n}\n"
+    "body": "${1|enum,event|} "
+  },
+  "pr": {
+    "prefix": "pr",
+    "body": "private "
+  },
+  "pt": {
+    "prefix": "pt",
+    "body": "protected "
+  },
+  "pu": {
+    "prefix": "pu",
+    "body": "public "
+  },
+  "pad": {
+    "prefix": "pad",
+    "body": "public abstract double "
+  },
+  "pod": {
+    "prefix": "pod",
+    "body": "public override double "
+  },
+  "pd": {
+    "prefix": "pd",
+    "body": "${1|protected double,private double|} "
+  },
+  "nd": {
+    "prefix": "nd",
+    // private double[,] storage = new double[3, 3];
+    // var numbers = new Dictionary<int, string>
+
+    "body": "${1|new double,new Dictionary<|}"
+  },
+  "pdt": {
+    "prefix": "pdt",
+    // public double this[int row, int column]
+    "body": "public double this"
+  },
+  "pcd": {
+    "prefix": "pcd",
+    "body": "public const double "
+  },
+  "pf": {
+    "prefix": "pf",
+    "body": "public float "
+  },
+
+  "tn": {
+    "prefix": "tn",
+    "body": "throw new "
+  },
+  "typeof": {
+    "prefix": "tp",
+    "body": "typeof($0)"
+  },
+  "ti": {
+    "prefix": "ti",
+    "body": "this int "
+  },
+  "tri": {
+    "prefix": "tri",
+    "body": "this ref int "
+  },
+  "ps": {
+    "prefix": "ps",
+    "body": "${1|public struct,public static,public string,private string,partial struct|} "
+  },
+  "psb": {
+    "prefix": "psb",
+    "body": "public static bool "
+  },
+  "ws": {
+    "prefix": "ws",
+    "body": "where T : struct"
+  },
+  "ot": {
+    "prefix": "ot",
+    "body": "out Type "
+  },
+  "oa": {
+    "prefix": "oa",
+    "body": "out Action "
+  },
+
+  "rt": {
+    "prefix": "rt",
+    // Deposit(ref this Account account, float amount)
+    "body": "ref this "
+    // "body": "return this;"
+  },
+  "ts": {
+    "prefix": "ts",
+    "body": "this string "
+  },
+  "pe": {
+    "prefix": "pe",
+    "body": "${1|public enum,public event|} "
+    // public event StackEventHandler<Stack<T>, StackEventArgs>? StackEvent;
+  },
+  "pee": {
+    "prefix": "pee",
+    // public event EventHandler<CustomEventArgs> RaiseCustomEvent;
+
+    "body": "public event EventHandler"
+  },
+  "pac": {
+    "prefix": "pac",
+    "body": "public abstract class "
+  },
+  "prl": {
+    "prefix": "prl",
+    // private readonly List<Shape> _list;
+    "body": "private readonly List"
+  },
+  "nl": {
+    "prefix": "nl",
+    // _list = new List<Shape>();
+    "body": "new List"
+  },
+  "pvv": {
+    "prefix": "pvv",
+    "body": "${1|protected virtual void,public virtual void|} "
+  },
+  "ddd": {
+    "prefix": "ddd",
+    // "body": "$CURRENT_YEAR/$CURRENT_MONTH/$CURRENT_DATE"
+    // "body": "$CURRENT_YEAR/$CURRENT_MONTH/${CURRENT_DATE/\\d(\\d)/$1/}"
+    "body": "$CURRENT_YEAR/$CURRENT_MONTH/${CURRENT_DATE/0(\\d)/$1/}"
+  },
+  "fop": {
+    "prefix": "fop",
+    // 占位符太多了也不好
+    "body": "for (int ${1:i} = 0; ${1:i} <$0; ${1:i}++) {\n}"
+
+    // "body": "for (int ${1:i} = ${0:0}; ${1:i} $2; ${1:i}++) {\n}"
+  },
+  // "foj": {
+  //   "prefix": "foj",
+  //   "body": "for (int ${1:i} = ${0:0}; ${1:i} $2; ${1:i}--) {\n}"
+  // },
+  "y": {
+    "prefix": "y",
+    "body": "yield "
+  },
+  "t": {
+    "prefix": "t",
+    "body": "true"
+  },
+  "n": {
+    "prefix": "n",
+    // var a = new[] { 0, };
+    // var list = new List<int>();
+    "body": "new " // 带个空格好接
+  },
+  "ro": {
+    "prefix": "ro",
+    "body": "record "
+  },
+  "rrs": {
+    "prefix": "rrs",
+    "body": "readonly record struct "
+  },
+  "abo": {
+    "prefix": "abo",
+    "body": "abstract override "
+  },
+  "abd": {
+    "prefix": "abd",
+    "body": "abstract double "
+  },
+  "abr": {
+    "prefix": "abr",
+    "body": "abstract record "
+  },
+  "ab": {
+    "prefix": "ab",
+    "body": "abstract "
+  },
+
+  "sr": {
+    "prefix": "sr",
+    "body": "sealed record "
+  },
+  "sw": {
+    "prefix": "sw",
+    // switch (StringSearchOption) { 这种最常见
+
+    "body": "switch ($0) {\n}"
+  },
+  "sch": {
+    "prefix": "sch",
+    "body": "switch {\n\t$0\n}${1|;,\\,|}"
+  },
+  "sp": {
+    "prefix": "sp",
+    "body": "namespace "
+  },
+  "pc": {
+    "prefix": "pc",
+    "body": "${1|public class,partial class,private class|} "
+  },
+
+  "psvm": {
+    "prefix": "psvm",
+    "body": "public static void Main "
+  },
+  "fii": {
+    "prefix": "fii",
+    "body": "Func<int, int>"
+  },
+  "df": {
+    "prefix": "df",
+
+    // default: 接冒号
+    //   Console.WriteLine($"{measurement}.");
+    //   break;
+
+    // var val = default(T);   先方法调用再接`;`
+    // Console.WriteLine(default(int)); 不接`;`
+    // Func<int, int> nthF = default;     接`;`
+    "body": "default"
+  },
+  "psi": {
+    "prefix": "psi",
+    "body": "public static int "
+    // "body": "public static IEnumerable<$0>"
+  },
+  "vo": {
+    "prefix": "vo",
+    "body": "void "
+  },
+  "cl": {
+    "prefix": "cl",
+    // 还是不要加上大括号, 因为复制修改的时候不需要
+    // public interface ISomeInterface {
+    // public class TestClass : ISomeInterface {
+
+    "body": "class "
+  },
+  "re": {
+    "prefix": "re",
+    "body": "required "
+  },
+  "ry": {
+    "prefix": "ry",
+    "body": "readonly "
+  },
+  "st": {
+    "prefix": "st",
+    // string this[int index]
+    "body": "${1|static,string this|} "
+  },
+  "ni": {
+    "prefix": "ni",
+    // private int[] arr = new int[100];
+    "body": "new int"
+  },
+  "pss": {
+    "prefix": "pss",
+    "body": "private static string "
+  },
+  "sv": {
+    "prefix": "sv",
+    "body": "static void "
+  },
+  "c": {
+    "prefix": "c",
+    "body": "const "
+  },
+  "de": {
+    "prefix": "de",
+    "body": "delegate "
+  },
+
+  "ri": {
+    "prefix": "ri",
+    "body": "ref int "
+  },
+
+  "rs": {
+    "prefix": "rs",
+    "body": "ref struct "
+  },
+  "sc": {
+    "prefix": "sc",
+    "body": "${1|struct,static class|} "
+  },
+  "ss": {
+    "prefix": "ss",
+    "body": "static string "
+  },
+  "it": {
+    "prefix": "it",
+    "body": "interface "
+  },
+
+  "bo": {
+    "prefix": "bo",
+    "body": "bool "
+  },
+  // "ch": {
+  //   "prefix": "ch",
+  //   "body": "char "
+  // },
+  "nc": {
+    "prefix": "nc",
+    // return str.Split(new char[] { ' ', '.', '?' },
+    "body": "new char[] { '"
+  },
+
+  "dy": {
+    "prefix": "dy",
+    "body": "dynamic "
+  },
+  "d": {
+    "prefix": "d",
+    "body": "double "
+  },
+  "a": {
+    "prefix": "a",
+    "body": "async "
+  },
+  "fl": {
+    "prefix": "fl",
+    "body": "float "
+  },
+  "z": {
+    "prefix": "z",
+    "body": ";"
+  },
+  "i": {
+    "prefix": "i",
+    "body": "int "
+  },
+  "lo": {
+    "prefix": "lo",
+    "body": "long "
+  },
+  "si": {
+    "prefix": "si",
+    "body": "static int "
+  },
+  "o": {
+    "prefix": "o",
+    "body": "object "
+  },
+  "jo": {
+    "prefix": "jo",
+    "body": "join $2 in $1 on $3 equals "
+  },
+  "s": {
+    "prefix": "s",
+    // return String.Empty;
+    // return string.Empty; 不需要转大写, 小写同样可以
+
+    // string s = names[i];
+    "body": "string "
+  },
+  "ty": {
+    "prefix": "ty",
+    "body": "Type "
+  },
+
+  "sdf": {
+    "prefix": "sdf",
+    "body": "string? $1 = default"
+  },
+  "w": {
+    "prefix": "w",
+    // case ( > 0, > 0) when a == b:
+    "body": "where "
+  },
+  "pdi": {
+    "prefix": "pdi",
+    "body": "public delegate int "
+  },
+  "wh": {
+    "prefix": "wh",
+    // while (!sr.EndOfStream) { 没有`;`
+
+    "body": "while ($0) {\n}"
+  },
+  "dow": {
+    "prefix": "dow",
+    // } while (currentLine < filegroup.Count()); 有`;`
+    "body": "do {\n} while ($0);"
+  },
+  "r": {
+    "prefix": "r",
+    "body": "return "
+  },
+  "f": {
+    "prefix": "f",
+    "body": "false"
+  },
+
+  "svm": {
+    "prefix": "svm",
+    // 末尾留个空格好触发 oe
+    "body": "static void Main "
+  },
+  "pvo": {
+    "prefix": "pvo",
+    "body": "private void $0(object sender, EventArgs e) {\n}"
+  },
+  "kb": {
+    "prefix": "kb",
+    "body": "break;"
+  },
+  "if": {
+    "prefix": "if",
+    "body": "if ($0) {\n}\n"
+  },
+  "eif": {
+    "prefix": "eif",
+    "body": "else if ($0) {\n}\n"
+  },
+
+  "el": {
+    "prefix": "el",
+    "body": "else {\n\t$0\n}"
+  },
+
+  "v": {
+    "prefix": "v",
+    "body": "var "
+  },
+  "ca": {
+    "prefix": "ca",
+    "body": "case $0:\n\tbreak;"
+  },
+  "caf": {
+    "prefix": "caf",
+    "body": "try {\n\t$0\n} finally {\n\n}\n"
+  },
+  "oo": {
+    "prefix": "oo",
+    "body": "out object "
+  },
+  "cac": {
+    "prefix": "cac",
+    "body": "try {\n\t\n} catch (${1:Exception e}) {\n\n}\n"
+  },
+  "cacf": {
+    "prefix": "cacf",
+    "body": "try {\n\t$1\n} catch (${0:Exception e}) {\n\n} finally {\n\n}\n"
+  },
+  "dm": {
+    "prefix": "dm",
+    "body": "decimal "
+  },
+  // "va": {
+  //   "prefix": "va",
+  //   // set => storage[row,column]=value;
+  //   // set => Add(key, value); `;`没有跟 value 连着
+  //   "body": "value"
+  // },
+  "pft": {
+    "prefix": "pft",
+    // public float this[int index]
+    "body": "public float this"
+  },
+  "pit": {
+    "prefix": "pit",
+    // public int this[string day] => FindDayIndex(day);
+    // public int this[Day day] => FindDayIndex(day);
+    "body": "public int this"
+  },
+  "nn": {
+    "prefix": "nn",
+    "body": "notnull"
+  },
+  "ns": {
+    "prefix": "ns",
+    // private string[] players = new string[10];
+    // string alphabet = new string(letters);
+
+    "body": "new string"
+  },
+  "rsl": {
+    "prefix": "rsl",
+    // Raw string literals
+    // 原始字符串字面量
+    // var p = $$"""point {{{X}}, {{Y}}} is {{Math.Sqrt(X * X + Y * Y)}}""";
+    "body": "\"\"\"$0\"\"\";"
+  },
+  "prr": {
+    "prefix": "prr",
+    "body": "private readonly "
+  },
+  "pst": {
+    "prefix": "pst",
+    // public string this[int pos]
+    "body": "public string this["
+  },
+  // "nw": {
+  //   "prefix": "nw",
+  //   // "body": "new () {$0}"
+  //   "body": "new () { $1 }"
+  // },
+  "ppc": {
+    "prefix": "ppc",
+    "body": "public partial class "
+  },
+  "pri": {
+    "prefix": "pri",
+    "body": "public required int "
+  },
+  "pdv": {
+    "prefix": "pdv",
+    "body": "public delegate void "
+  },
+  "dv": {
+    "prefix": "dv",
+    "body": "delegate void "
+  }
+}

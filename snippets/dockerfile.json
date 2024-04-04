@@ -1,0 +1,10 @@
+{
+  "rpp": {
+    "prefix": "rpp",
+    "body": [
+      "RUN --mount=type=bind,source=package.json,target=package.json \\",
+      "\t--mount=type=bind,source=package-lock.json,target=package-lock.json \\",
+      "\t--mount=type=cache,target=/root/.npm \\\n\t"
+    ]
+  }
+}

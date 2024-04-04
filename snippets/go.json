@@ -1,0 +1,576 @@
+{
+  // "fu": {
+  //   "prefix": "fu",
+  //   "body": "func($0)"
+  // },
+  "fs": {
+    "prefix": "fs",
+    "body": "func(string)"
+  },
+  "ir": {
+    "prefix": "ir",
+    "body": "io.Reader"
+  },
+  "z": {
+    "prefix": "z",
+    "body": "nil"
+  },
+  "fo": {
+    "prefix": "fo",
+    "body": "for $0 {\n}"
+  },
+  "ms": {
+    "prefix": "ms",
+    "body": "map[string]"
+  },
+  "pfm": {
+    "prefix": "pfm",
+    "body": ["package main\n", "func main() {\n\t$0\n}\n"]
+  },
+  "ic": {
+    "prefix": "ic",
+    "body": ["import (", "\t\"errors\"", "\t\"fmt\"", "\t\"strings\"", "\t\"math/rand\"", ")\n\n"]
+    // "body": ["import (", "\t\"errors\"", "\t\"fmt\"", "\t\"strings\"", ")\n"]
+  },
+  "ss": {
+    "prefix": "ss",
+    // func (p Person) String() string {
+    // "body": "String() string"
+    // "body": " ${1|String() string,(string\\, []string)|}"
+    "body": "${1|String() string,string\\, []string|}"
+  },
+  "viss": {
+    "prefix": "vis",
+    "body": "var $1 = (*$0)(nil)"
+  },
+  "mss": {
+    "prefix": "mss",
+    // func toMap(env []string) map[string]string {
+    // "body": "(map[string]string, error)"
+    "body": " ${1|map[string]string,(map[string]string\\, error)|}"
+    // "body": "(map[string]string, ${0:error})"
+  },
+  "mrt": {
+    "prefix": "mrt",
+    // "body": "map[reflect.Type]"
+    "body": "${1|map[reflect.Type],make([]reflect.Type\\, 0)|}"
+  },
+  "mrv": {
+    "prefix": "mrv",
+    "body": "make([]reflect.Value, 0)"
+  },
+  // "rmr": {
+  //   "prefix": "rmr",
+  //   "body": "return map[reflect.Type]"
+  // },
+  "vis": {
+    "prefix": "vi",
+    "body": "var $1 = $0"
+  },
+  "ru": {
+    "prefix": "ru",
+
+    // var aa rune
+    // a := []rune{}
+
+    "body": "rune"
+    // "body": "rune($0)"
+  },
+  // "ruu": {
+  //   "prefix": "ruu",
+  //   // r := []rune(s)
+  //   "body": "[]rune($0)"
+  // },
+  "v": {
+    "prefix": "v",
+    "body": "var "
+  },
+  "p": {
+    "prefix": "p",
+    "body": "fmt.Println($0)"
+  },
+  // "pf": {
+  //   "prefix": "pf",
+  //   // "body": "fmt.Printf(\"$0\\n\")"
+
+  //   // fmt.Printf("[") 不带 `\n`
+  //   // fmt.Printf("[\n]") 输入`[`会成对填充
+  //   "body": "fmt.Printf(\"$0${1:\\n}\")"
+  // },
+  // "pff": {
+  //   "prefix": "pff",
+  //   "body": "fmt.Printf(\"%T,%v\\n\", $1, $1)\n"
+  // },
+  // "pfp": {
+  //   "prefix": "pfp",
+  //   "body": "fmt.Printf(\"%p,%v\\n\", &$1, $1)\n"
+  // },
+  // "in": {
+  //   "prefix": "in",
+  //   "body": "(*$1)($0)"
+  // },
+  "fop": {
+    "prefix": "fop",
+    // "body": "for ${1:i} := 0; ${1:i} < $0; ${1:i}++ {\n}"
+    "body": "for ${1:i} := 0; ${1:i} <$0; ${1:i}++ {\n}"
+  },
+  "fos": {
+    "prefix": "fos",
+    // "body": "for ${1:i} := $0; ${1:i} > 0; ${1:i}-- {\n}"
+    "body": "for ${1:i} := $0; ${1:i} >= 0; ${1:i}-- {\n}"
+  },
+  "mms": {
+    "prefix": "mms",
+    // "body": "make(map[string]string)"
+    // m := make(map[string]Vertex)
+    // var m = make(map[string]map[string]RpcMethod)
+    "body": "make(map[string]${0:string})"
+  },
+  "fff": {
+    "prefix": "fff",
+    "body": "func(float64, float64) float64"
+  },
+  "fii": {
+    "prefix": "fii",
+    "body": "func(int) int"
+  },
+  // "pa": {
+  //   "prefix": "pa",
+  // 提示极慢 不要了
+  //   "body": "package "
+  // },
+  "kt": {
+    "prefix": "kt",
+    "body": "[]${1:int}"
+  },
+  "az": {
+    "prefix": "az",
+    "body": "a-zA-Z"
+  },
+  "e": {
+    "prefix": "e",
+    // "body": "else "
+    "body": "error"
+  },
+  "if": {
+    "prefix": "if",
+    // "body": "if $1 {\n\t$2\n}"
+    "body": "if $0 {\n}"
+  },
+  "eif": {
+    "prefix": "eif",
+    // "body": "if $1 {\n\t$2\n}"
+    "body": "else if $0 {\n}"
+  },
+  "ifn": {
+    "prefix": "ifn",
+    "body": "if $0 == nil {\n}"
+  },
+
+  "ife": {
+    "prefix": "ife",
+
+    // 不一定有return 在函数末尾就不需要
+    // "body": "if err != nil {\n\t${0:return}\n}\n"
+    "body": "if err != nil {\n\t$0\n}\n"
+    // "body": "if err != nil {\n}\n"
+  },
+  "ifo": {
+    "prefix": "ifo",
+
+    "body": "if $1ok {\n\treturn nil\n}\n"
+  },
+  "ifoo": {
+    "prefix": "ifoo",
+
+    // "body": "if ${2:_}, ok := $0; $1ok {\n\treturn nil\n}\n"
+    // "body": "if ${2:_}, ok := $0; $1ok {\n}\n"
+    "body": "if ${2:_}, ok := $3; $1ok {\n}\n" // 在下面插入行后 后面的跳转自动失效
+    // ${TM_FILENAME/(.*)\\..+$/$1/}
+    // "body": "if ${2:_}, ${1/!?(.*)/$1/} := $0; ${1:ok} {\n}\n"
+    // "body": "if ${3:_}, ${2} := $0; $1${2:ok} {\n}\n"
+  },
+
+  "ifee": {
+    "prefix": "ifee",
+    // "body": "if ${1:err} != nil {\n\t$2\n}\n"
+    // "body": "if err != nil {\n\treturn nil, err\n}\n"
+    "body": "if err != nil {\n\t${1|return err,return nil\\, err|}\n}\n"
+  },
+  // "ifer": {
+  //   "prefix": "ifer",
+
+  //   // if _, err := bw.Write(flacSignature); err != nil {
+  //   // if err := encode(bw, info, len(blocks) == 0); err != nil {
+  //   // if tm := asTextUnmarshaler(field); tm != nil { 不是err
+
+  //   // if err := json.Unmarshal(jsonData, &customObj); err != nil {
+  //   // 	return 没有err
+  //   // }
+
+  //   // if val, err := parserFunc(value); err != nil {
+  //   // 	return newParseError(sf, err) 自定义 Error
+  //   // }
+
+  //   // "body": ["if $2err := $0; err != nil {", "\t", "}\n"]
+  //   "body": ["if $2err := $0; err != nil {", "}\n"]
+  // },
+  "ee": {
+    "prefix": "ee",
+    "body": "err error"
+  },
+  "eifo": {
+    "prefix": "eifo",
+    // "body": "if $1, ok := $0; ok {\n}"
+    "body": "else if ${1:_}, ok := $0; ok {\n}"
+  },
+
+  "mrk": {
+    "prefix": "mrk",
+    "body": "map[reflect.Kind]"
+  },
+
+  "er": {
+    "prefix": "er",
+    "body": "Error() string"
+  },
+  "el": {
+    "prefix": "el",
+    "body": "else {\n\t$0\n}"
+  },
+  "f": {
+    "prefix": "f",
+    "body": "false"
+  },
+  "wr": {
+    "prefix": "wr",
+    "body": "w http.ResponseWriter, r *http.Request"
+  },
+  // "h": {
+  //   "prefix": "h",
+  //   "body": "chan "
+  // },
+
+  "r": {
+    "prefix": "r",
+    "body": "return "
+  },
+  //   "c": {
+  //     "prefix": "c",
+  //     "body": "const (\n\t$0\n)"
+  //   },
+  "ca": {
+    "prefix": "ca",
+
+    // case today + 0:
+    "body": "case $0:"
+
+    // "body": "case \"$0\":"
+  },
+  "cai": {
+    "prefix": "cai",
+    "body": "case int:\n\t"
+  },
+  "cas": {
+    "prefix": "cas",
+    "body": "case string:\n\t"
+  },
+  "ak": {
+    "prefix": "ak",
+    "body": "make($0)"
+  },
+  "bo": {
+    "prefix": "bo",
+    "body": "bool"
+  },
+  "b": {
+    "prefix": "b",
+    // Body  []byte
+    // "body": "byte($0)"
+    "body": "byte"
+  },
+  "ie": {
+    "prefix": "ie",
+    // (Effect, int, error)
+
+    // "body": "int, error"
+    // "body": " int, error"
+    // 如果是替换 就不需要前面带空格
+    // "body": " ${1|int\\, error,(interface{}\\, error)|}"
+    // "body": " ${1|int\\, error,interface{}\\, error|}"
+    "body": "${1|int\\, error,interface{}\\, error|}"
+    // "body": "${1|int\\, error,(interface{}\\, error)|}"
+  },
+
+  "se": {
+    "prefix": "se",
+    "body": "string, error"
+  },
+  "sbb": {
+    "prefix": "sbb",
+    "body": "string, bool, bool"
+  },
+  // "un": {
+  //   "prefix": "un",
+  //   "body": "unknown"
+  // },
+  "fra": {
+    // "prefix": "fr", 跟`fr`包冲突
+    "prefix": "fra",
+    "body": "for $1 := range $0 {\n}"
+
+    // for  := range nnames { nnames有问题, 不会去除已输入
+    // "body": "for $0 := range $1 {\n}"
+  },
+  "rn": {
+    "prefix": "rn",
+    "body": "return $0 nil"
+  },
+  "rnn": {
+    // "prefix": "rn",包冲突
+    "prefix": "rnn",
+    // return v, nil
+    // return nil
+    // "body": "return $0, nil"
+    "body": "return $0 nil"
+  },
+  "re": {
+    "prefix": "re",
+    "body": "return $0 err"
+  },
+  "t": {
+    "prefix": "t",
+    "body": "true"
+  },
+  "kb": {
+    "prefix": "kb",
+    "body": "break"
+  },
+  "ap": {
+    "prefix": "ap",
+    "body": "map[${1:string}]$0"
+  },
+  "n": {
+    "prefix": "n",
+    // "body": "nil"
+    "body": "new($0)"
+  },
+  // "ne": {
+  //   "prefix": "ne",
+  //   "body": "new($0)"
+  // },
+  // "ch": {
+  //   "prefix": "ch",
+  //   "body": "chan "
+  // },
+
+  "cr": {
+    "prefix": "cr", // reveive
+    // Describe(ch chan<- *prometheus.Desc)
+    "body": "chan<- "
+  },
+  // "cs": {
+  //   "prefix": "cs", // send
+  //   "body": "<-chan "
+  // },
+  "i": {
+    "prefix": "i",
+    "body": "int"
+  },
+
+  "s": {
+    "prefix": "s",
+    "body": "string"
+  },
+  "pa": {
+    "prefix": "pa",
+    "body": "panic(\"$0\")"
+  },
+  "u": {
+    "prefix": "u",
+    // "body": "uint"
+    "body": "${1|uint,uintptr|}"
+  },
+
+  "ll": {
+    "prefix": "ll",
+    "body": "0600"
+  },
+  "swc": {
+    "prefix": "swc",
+
+    // switch field.Kind() {
+
+    // "body": "${1|switch,select|} {\ncase $0:\n}"
+    "body": "${1|switch ,select|}$2 {\ncase $0:\n}"
+  },
+  "sec": {
+    "prefix": "sec",
+
+    // "body": "select {\ncase $0:\n}"
+    "body": "select {\ncase $0:\ndefault:\n\t\n}"
+    // "body": "select {\ncase $0:\n}\n" // 有可能是在函数末
+  },
+  "df": {
+    "prefix": "df",
+    // "body": "default:"
+    "body": "default:\n\t"
+  },
+
+  "ty": {
+    "prefix": "ty",
+    "body": "type"
+  },
+  "tp": {
+    "prefix": "tp",
+    "body": "type "
+  },
+  "fe": {
+    "prefix": "fe",
+    "body": "(float64, error)"
+  },
+  "ci": {
+    "prefix": "ci",
+    "body": "chan int"
+  },
+  "mci": {
+    "prefix": "mci",
+
+    // ch := make(chan int, 2)
+    "body": "make(chan int, $0)"
+  },
+  "j": {
+    "prefix": "j",
+    "body": "<-"
+  },
+  "l": {
+    "prefix": "l",
+    "body": "->"
+  },
+
+  // "si": {
+  //   "prefix": "si",
+  //   "body": "type $0 {\n}"
+  // },
+  "tf": {
+    "prefix": "tf",
+    // "body": "type $1 func(*$2)\n"
+    "body": "type $1 func($0)"
+  },
+
+  "ts": {
+    "prefix": "ts",
+    "body": ["type $0 struct {\n}\n"]
+  },
+  "vs": {
+    "prefix": "vs",
+    "body": ["var $0 struct {\n}\n"]
+  },
+  // "js": {
+  //   "prefix": "js",
+  //   "body": "$1 ${1:/downcase}"
+  // },
+  "ti": {
+    "prefix": "ti",
+    // "body": ["type ${1:name} interface {\n\t$2\n}\n"]
+    "body": ["type $0 interface {\n}\n"]
+  },
+  // "tif": {
+  //   "prefix": "tif",
+  //   "body": ["type ${1:name} interface {\n\t$3()\n}\n", "func $3($2 $1)  {\n\t$4\n}\n"]
+  // },
+  "sw": {
+    "prefix": "sw",
+
+    "body": "switch $0 {\n}"
+  },
+
+  "it": {
+    "prefix": "it",
+    "body": "interface{}"
+  },
+  // "tff": {
+  //   "prefix": "tff",
+  //   "body": [
+  //     "type ${1:name} []func()",
+  //     // "func (${1/(.)(.*)/${1:/downcase}/} *$1)  {\n\n}"
+  //     "func ($2 *$1)  {\n\n}"
+  //   ]
+  // },
+  "fi": {
+    "prefix": "fi",
+    // "body": "$1 ${2:string} `ini:\"${1/(.*)/${1:/camelcase}/}\"`\n"
+    "body": "$1  $0 `json:\"${1/(.*)/${1:/downcase}/}\"`"
+  },
+  "tsf": {
+    "prefix": "tsf",
+    // "body": ["type ${1:name} struct {\n\t$3\n}", "func ($2 $1)  {\n\t$4\n}\n"]
+    "body": ["type ${1:name} struct {\n\t$3\n}", "func ($2 *$1)  {\n\t$4\n}\n"]
+  },
+  "fsc": {
+    "prefix": "fsc",
+    "body": ["for {", "\tselect {", "\tcase $0:", "\t}", "}"]
+  },
+  "fg": {
+    "prefix": "fg",
+    // "body": "go func() {\n\t$1\n}()"
+    "body": "go func() {\n\t$0\n}()\n"
+  },
+  // "fu": {
+  //   "prefix": "fu",
+  //   "body": "func($0)"
+  // },
+  "fn": {
+    "prefix": "fn",
+    // "body": "func $1  {\n\t$2\n}"
+    // "body": "func $1($0) {\n}"
+    "body": "func $0 {\n}"
+  },
+  "msi": {
+    "prefix": "msi",
+    // "body": "map[string]int"
+    "body": "${1|map[string]int,map[string]interface{}|}"
+  },
+  "mis": {
+    "prefix": "mis",
+    "body": "map[int]string"
+  },
+  "m": {
+    "prefix": "m",
+    // "body": "map[$1]"
+    // "body": "make($0)"
+    "body": "make([]$0)"
+    // "body": "map[$0]"
+  },
+  "c": {
+    "prefix": "c",
+    // const Pi = 3.14
+
+    "body": "const "
+  },
+  // "co": {
+  //   "prefix": "co",
+  //   "body": "comparable"
+  // },
+  "fnt": {
+    "prefix": "fnt",
+    // "body": "func Test$1(t *testing.T) {\n\t$0\n}"
+    // "body": "func ${1:Test}$2(t *testing.T) {\n\t$0\n}"
+    "body": "func ${1:Test}$0(t *testing.T) {\n}"
+  },
+
+  "dfn": {
+    "prefix": "dfn",
+    "body": "defer func() {\n\t$0\n}()"
+  },
+
+  "ip": {
+    "prefix": "ip",
+    "body": "import \"$0\"" // 有可能是复制过来的
+    // "body": "import "
+  },
+  "d": {
+    "prefix": "d",
+    "body": "defer "
+  }
+}

@@ -1,0 +1,196 @@
+{
+  "ec": {
+    "prefix": "ec",
+    "body": "exec "
+  },
+  "ub": {
+    "prefix": "us",
+    "body": ["#!/usr/bin/env bash", "set -Eeuo pipefail\n"]
+  },
+
+  "ch": {
+    "prefix": "ch",
+    "body": "chmod "
+  },
+  "oe": {
+    "prefix": "oe",
+    "body": "$0>&1"
+  },
+  "cu": {
+    "prefix": "cu",
+    "body": "curl -C - -O"
+  },
+  "to": {
+    "prefix": "to",
+    "body": "touch "
+  },
+  "dn": {
+    "prefix": "dn",
+    "body": ">/dev/null"
+  },
+  "e": {
+    "prefix": "e",
+    "body": "echo \"$0\""
+  },
+  "ee": {
+    "prefix": "ee",
+    "body": "echo -e \"$0\""
+  },
+  "ef": {
+    "prefix": "ef",
+    "body": ["$0)", ";;"]
+  },
+  "l": {
+    "prefix": "l",
+    "body": "local "
+  },
+  "x": {
+    "prefix": "x",
+    "body": "exec "
+  },
+  "oa": {
+    "prefix": "oa",
+    "body": "\\$OPTARG"
+  },
+  "fd": {
+    "prefix": "fd",
+    "body": "${$0}"
+  },
+  "ap": {
+    "prefix": "ap",
+    "body": "trap "
+  },
+  "b": {
+    "prefix": "b",
+    "body": "BEGIN"
+  },
+  "y": {
+    "prefix": "y",
+    "body": "\"$$0\""
+  },
+  "a": {
+    "prefix": "a",
+    "body": "awk $0"
+  },
+  "p": {
+    "prefix": "p",
+    "body": "print"
+  },
+  "ar": {
+    "prefix": "ar",
+    "body": "${$1[$0]}"
+  },
+  "op": {
+    "prefix": "op",
+    "body": "\\$OPTIND"
+  },
+  "if": {
+    "prefix": "if",
+    "body": ["if $0; then", "fi"]
+  },
+  "el": {
+    "prefix": "el",
+    "body": "else \n\t"
+  },
+  // "el": {
+  //   "prefix": "el",
+  //   "body": ["elif $0; then"]
+  // },
+  "f": {
+    "prefix": "f",
+    "body": "$($0)"
+  },
+  "fo": {
+    "prefix": "fo",
+    "body": ["for i in \"$1\"; do", "\t$0", "done"]
+  },
+  "fi": {
+    "prefix": "fi",
+    "body": [
+      "for ((i=$1; i<$0; i++)); do",
+      // "\t$0",
+      "done"
+    ]
+  },
+  "fk": {
+    "prefix": "fk",
+    "body": ["for ((;;)); do", "\t$0", "done"]
+  },
+  // "z": {
+  // 	"prefix": "z",
+  // 	"body": "$1 $2 $3 $0"
+  // },
+  "fn": {
+    "prefix": "fn",
+    "body": "$1() {\n\t$0\n}"
+  },
+  "wh": {
+    "prefix": "wh",
+    "body": ["while $0; do", "done"]
+  },
+  "se": {
+    "prefix": "se",
+    "body": ["select $0; do", "done"]
+  },
+  "er": {
+    "prefix": "er",
+    "body": ">&2"
+  },
+  "r": {
+    "prefix": "r",
+    "body": "return "
+  },
+  "xl": {
+    "prefix": "xl",
+    "body": ["exec 4<&0", "exec 0<$0", "exec 0<&4 4<&-"]
+  },
+  "xy": {
+    "prefix": "xy",
+    "body": ["exec 6>&1", "exec 1>$0", "exec 1>&6 6>&-"]
+  },
+  "rp": {
+    "prefix": "rp",
+    "body": "read -p '> ' $0"
+  },
+  "t": {
+    "prefix": "t",
+    "body": "true"
+  },
+  "kb": {
+    "prefix": "kb",
+    "body": "break"
+  },
+  "un": {
+    "prefix": "un",
+    "body": ["until $0; do", "done"]
+  },
+  "cl": {
+    "prefix": "cl",
+    "body": "clear"
+  },
+  "ex": {
+    "prefix": "ex",
+    "body": "exit 1"
+  },
+  "k": {
+    "prefix": "k",
+    "body": "[ \"$1\" $2 ] $0"
+  },
+
+  "kk": {
+    "prefix": "kk",
+    "body": "[[ \"$1\" $2 ]] $0"
+  },
+  "ct": {
+    "prefix": "ct",
+    "body": "continue"
+  },
+  "g": {
+    "prefix": "g",
+    "body": "getopts $0 OPTION"
+  },
+  "ca": {
+    "prefix": "ca",
+    "body": ["case $0 in", "esac"]
+  }
+}

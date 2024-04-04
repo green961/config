@@ -1,0 +1,547 @@
+{
+  // python -m unittest mydict_test
+  "nc": {
+    "prefix": "nc",
+    "body": "nonlocal "
+  },
+  "a": {
+    "prefix": "a",
+    "body": "*args"
+  },
+  "ub": {
+    "prefix": "ub",
+    "body": "#!/usr/bin/env python"
+  },
+  "ai": {
+    "prefix": "ai",
+    "body": "await "
+  },
+  // "cj": {
+  //   "prefix": "cj",
+  //   "body": "${0:ss} = $1"
+  // },
+  "i": {
+    "prefix": "i",
+    //               birth = int(input('birth: '))
+    // if not isinstance(x, (int, float)):
+
+    "body": "int"
+    // "body": "int($0)"
+  },
+  "d": {
+    "prefix": "d",
+    "body": "dict"
+  },
+  "rl": {
+    "prefix": "rl",
+    "body": "return lambda "
+  },
+  "l": {
+    "prefix": "l",
+    "body": "list"
+  },
+
+  "re": {
+    "prefix": "re",
+    // raise     TypeError('bad operand type')
+    // raise StopIteration()
+
+    "body": "raise ${1:TypeError}($0)"
+    // "body": "raise ${1:TypeError}('$0')"
+  },
+  "ee": {
+    "prefix": "ee",
+    "body": "except ${0:ValueError} as e:"
+  },
+  "se": {
+    "prefix": "se",
+    // del self[key]
+
+    // "body": "self."
+    "body": "self"
+  },
+
+  "rs": {
+    "prefix": "rs",
+    // def __iter__(self):
+    //     return self  # 实例本身就是迭代对象，故返回自己
+
+    // "body": "return self."
+    "body": "return self"
+  },
+  "rt": {
+    "prefix": "rt",
+    // "body": "return type"
+    "body": "return type.__new__(cls, name, bases, attrs)"
+  },
+  "mc": {
+    "prefix": "mc",
+    // "body": "match ${1:score}:\n\tcase ${0:'A'}:"
+    "body": "match $1:\n\tcase $0:"
+  },
+
+  "False": {
+    "prefix": "f",
+    "body": "False"
+  },
+  "g": {
+    "prefix": "g",
+    "body": "global "
+  },
+  "kw": {
+    "prefix": "kw",
+    "body": "**kwargs"
+  },
+  "ymd": {
+    "prefix": "ymd",
+    // "body": "%Y-%m-%d %H:%M:%S"
+
+    "body": "'%Y-%m-%d %H:%M:%S'"
+  },
+
+  "lr": {
+    "prefix": "lr",
+    "body": "list(range($0))"
+  },
+  "fi": {
+    "prefix": "fi",
+    // for n in Fib():
+
+    "body": "for $0 in $1:"
+    // "body": "for $0 in $1"
+  },
+  "fir": {
+    "prefix": "fir",
+    // for x in range(n):
+
+    "body": "for $0 in range($1):"
+  },
+  "fe": {
+    "prefix": "fe",
+    // command_line_args = {k: v for k, v in vars(namespace).items() if v}
+
+    // [d for d in os.listdir('.')]
+    // [x * x for x in range(1, 11) if x % 2 == 0]
+
+    // "body": "i$0 for i in $1"
+    // 仔细看下面这个 多个for只有前面才要前缀
+    // [m + n for m in 'ABC' for n in 'XYZ']
+
+    // L = ['Hello', 'World', 'IBM', 'AppLe']
+    // print([s.lower() for s in L]) 先填`L`
+
+    // g = (x * x for x in range(10)) 生成器
+    // print((i*i for i in range(9))) 始终带`()` 提取变量不报错
+
+    // "body": "[$1 for $1 in $0]"
+    // "body": "[$0 for $2 in $1]"
+    // "body": "[$0 for i in $1]"
+    // "body": "[i$0 for i in $1]"
+    "body": "i$0 for i in $1"
+    // "body": "[${2:$1} for $1 in range($0)]"
+  },
+  "fer": {
+    "prefix": "fer",
+    "body": "i$0 for i in range($1)"
+  },
+  "fem": {
+    "prefix": "fem",
+    // c = {k: v for k, v in vars(namespace).items() if v}
+    "body": "{k: v for k, v in $0}"
+  },
+  "tye": {
+    "prefix": "tye",
+    // except KeyError:
+
+    "body": "try:\nexcept $0:\n\tpass"
+    // "body": "try:\nexcept $0 as e:\n"
+    // "body": "try:\nexcept $0 as e:\n\tpass"
+  },
+  "tyef": {
+    "prefix": "tyef",
+    // except KeyError:
+    // except Exception as e:
+
+    // "body": "try:\nexcept $0:\n\tpass\nfinally :\n\tpass"
+    "body": "try:\nexcept ${1:Exception} $0:\n\tpass\nfinally :\n\tpass"
+  },
+  "fmr": {
+    // filter map reduce
+    "prefix": "fmr",
+    // "body": "filter(lambda $0, $1)"
+    // "body": "list(filter(lambda $0, $1))"
+    // "body": "list(${1|filter,map,reduce|}(lambda $0, $2))"
+
+    // reduce(add, [1, 3, 5, 7, 9])
+    "body": "${1|filter,map,reduce|}(lambda $0, $2)"
+  },
+  "ir": {
+    "prefix": "ir",
+    // print([x*x for x in range(1, 1)])
+    "body": "in range($0)"
+  },
+  // "fifi": {
+  //   "prefix": "fifi",
+  //   "body": "[$0 for $1 in 'abc' for $2 in 'xyz']"
+  // },
+  // "li": {
+  //   "prefix": "li",
+  //   "body": "list"
+  // },
+  "rn": {
+    "prefix": "rn",
+    "body": "return None"
+  },
+  // "tu": {
+  //   "prefix": "tu",
+  //   "body": "tuple"
+  // },
+
+  // "c": {
+  //   "prefix": "c",
+  //   "body": "chr($0)"
+  // },
+
+  "in": {
+    "prefix": "in",
+    "body": "is None"
+  },
+  "inn": {
+    "prefix": "inn",
+    "body": "is not None "
+  },
+  "an": {
+    "prefix": "an",
+    "body": "and not "
+  },
+  "nt": {
+    "prefix": "nt",
+    "body": "not in "
+  },
+  // "and": {
+  //   "prefix": "a",
+  //   "body": "and "
+  // },
+  "fl": {
+    "prefix": "fl",
+    "body": "float"
+  },
+  "tu": {
+    "prefix": "tu",
+    // isinstance(p, tuple)
+    "body": "tuple"
+  },
+  "el": {
+    "prefix": "el",
+    "body": "else:\n\t$0"
+  },
+  "paramt": {
+    "prefix": "pt",
+    "body": "${1:T} = TypeVar('${1:T}', $0)"
+  },
+  "pa": {
+    "prefix": "pa",
+    "body": "pass"
+  },
+  "u8": {
+    "prefix": "u8",
+    "body": "encoding=\"utf-8\""
+  },
+
+  // "ay": {
+  //   "prefix": "ay",
+  //   "body": "async "
+  // },
+  "fip": {
+    "prefix": "fip",
+    "body": "from $1 import $0"
+  },
+  "e": {
+    "prefix": "e",
+    "body": "enumerate($0)"
+  },
+  "o": {
+    "prefix": "o",
+    "body": "object"
+  },
+  "op": {
+    "prefix": "op",
+    "body": "os.path."
+  },
+  // "st": {
+  //   "prefix": "st",
+  //   "body": "@staticmethod\n"
+  // },
+  // "ct": {
+  //   "prefix": "ct",
+  //   "body": "@classmethod\n"
+  // },
+  "_rs": {
+    "prefix": "_rs",
+    "body": "__repr__ = __str__"
+  },
+  "y": {
+    "prefix": "y",
+    "body": "yield "
+  },
+  // "ca": {
+  //   "prefix": "ca",
+  //   "body": "try:\nexcept $1:\n\tpass"
+  //   // "body": "try:\n\t$0\nexcept Exception as e:\n\tpass"
+  // },
+  "ie": {
+    "prefix": "ie",
+    "body": "$1 if $0 else $2"
+  },
+  "cl": {
+    "prefix": "cl",
+    "body": "class $1($0):"
+
+    // class Model(d): 占位符太多 在$2没法用tab
+    //     pass
+    // "body": "class $1($2):\n\t${0:pass}"
+  },
+  "clm": {
+    "prefix": "clm",
+    // "body": "class $1Metaclass(type):\n\t"
+    //     "body": [
+    //       "class $1Metaclass(type):",
+    //       "\tdef __new__(cls, name, bases, attrs):\n\t\t"
+    //     ]
+    "body": [
+      "class $1Metaclass(type):",
+      "\tdef __new__(cls, name, bases, attrs):\n\t\t${0:pass}"
+    ]
+  },
+  "m": {
+    "prefix": "m",
+    "body": "metaclass="
+  },
+  "la": {
+    "prefix": "la",
+    "body": "lambda "
+  },
+  "p": {
+    "prefix": "p",
+    "body": "print($0)"
+  },
+  "pt": {
+    "prefix": "pr",
+    "body": ["@property", "def ${1:score}(self)$0:"]
+  },
+  "prs": {
+    "prefix": "prs",
+    "body": [
+      "@property",
+      "def ${1:score}(self):",
+      "\tpass",
+      "@${1:score}.setter",
+      "def ${1:score}(self, $0):",
+      "\tpass"
+    ]
+  },
+  "t": {
+    "prefix": "t",
+    "body": "True"
+  },
+  // "xp": {
+  //   "prefix": "xp",
+  //   "body": "@$0]"
+  // },
+  // "cc": {
+  //   "prefix": "cc",
+  //   "body": "\"{$0}\""
+  // },
+  "fii": {
+    "prefix": "foo",
+    "body": "$1 for $1 in $0"
+  },
+  "fo": {
+    "prefix": "fo",
+    "body": "${0:k} for $1 in $2"
+  },
+  // "fol": {
+  //   "prefix": "fol",
+  //   "body": "[${0:k:v} for $1 in $2]"
+  // },
+  // "fod": {
+  //   "prefix": "fod",
+  //   "body": "{${0:k:v} for $1 in $2}"
+  // },
+  "fom": {
+    "prefix": "fm",
+    "body": "for $1 in $0:"
+  },
+  "b": {
+    "prefix": "b",
+    "body": "bytes"
+  },
+  "bo": {
+    "prefix": "bo",
+    "body": "bool"
+  },
+  "si": {
+    "prefix": "si",
+    "body": "super().__init__($0)"
+  },
+  "if": {
+    "prefix": "if",
+    "body": "if $0:"
+  },
+  "eif": {
+    "prefix": "eif",
+    "body": "elif $0:"
+  },
+  "ifn": {
+    "prefix": "ifn",
+    "body": "if not $0:"
+  },
+  "s": {
+    "prefix": "s",
+    "body": "str"
+  },
+  "sl": {
+    "prefix": "sl",
+    "body": "slice"
+  },
+  "v": {
+    "prefix": "v",
+    "body": "type"
+  },
+  "import": {
+    "prefix": "ip",
+    "body": "import "
+  },
+  "de": {
+    "prefix": "de",
+    "body": "def $1($0):"
+  },
+  "_s": {
+    "prefix": "_s",
+    "body": "__slots__ = ('$0')"
+  },
+  "_d": {
+    "prefix": "_d",
+    "body": "__dict__"
+  },
+  "des": {
+    "prefix": "des",
+    "body": "def $1(self, $0):"
+  },
+  "det": {
+    "prefix": "det",
+    // "body": "def test_$1(self, $0):"
+    "body": "def test_$1(self):"
+  },
+  "dee": {
+    "prefix": "dee",
+
+    "body": "def __exit__(self, exc_type, exc_value, traceback):\n\t"
+    // "body": "def __exit__(self, exc_type, exc_value, traceback):\n\t${pass}"
+    // "body": "def __exit__(self, exc_type, exc_value, traceback):\n\t${0:pass}"
+    // "body": "def __exit__(self, exc_type, exc_value, traceback):\n\t${1:pass}"
+  },
+  "dem": {
+    "prefix": "dem",
+    // def __getitem__(self, n):
+
+    // "body": "def ${1|__bool__,__call__,__enter__,__eq__,__exit__,__getattr__,__getitem__,__hash__,__init__,__iter__,__len__,__repr__,__setattr__,__setitem__,__str__|}(self, $0):"
+    "body": "def ${1|__bool__,__call__,__enter__,__eq__,__exit__,__getattr__,__getitem__,__hash__,__init__,__iter__,__len__,__repr__,__setattr__,__setitem__,__str__|}(self$0):"
+    // "body": "def ${1|__bool__,__call__,__enter__,__eq__,__exit__,__getattr__,__getitem__,__hash__,__init__,__iter__,__len__,__repr__,__setattr__,__setitem__,__str__,__next__|}(self):\n\t"
+  },
+  // "dea": {
+  //   "prefix": "dea",
+
+  //   "body": "def __getitem__(self, $0):"
+  // },
+  "sn": {
+    "prefix": "sn",
+    "body": ["def __new__(cls,$1):", "\treturn super().__new__(cls,$0)"]
+  },
+
+  "ade": {
+    "prefix": "ade",
+    "body": "async def $1($0):"
+  },
+
+  "r": {
+    "prefix": "r",
+    "body": "return "
+  },
+  "z": {
+    "prefix": "z",
+    "body": "'''$0'''"
+    // "body": "'''\n$0\n'''"
+  },
+  "rz": {
+    "prefix": "rz",
+    "body": "r'''$0'''"
+    // "body": "'''\n$0\n'''"
+  },
+  "w": {
+    "prefix": "w",
+
+    // with closing(urlopen('https://www.python.org')) as page:
+    // with Query('Bob') as q:
+    // with tag("h1"):
+
+    "body": "with "
+  },
+  // "ws": {
+  //   "prefix": "ws",
+  //   "body": "with self"
+  // },
+  "wsa": {
+    "prefix": "wsa",
+    "body": "with self.assertRaises(${0:KeyError}):"
+  },
+  "wo": {
+    "prefix": "wo",
+    "body": "with open($1) as $0:"
+  },
+  "wh": {
+    "prefix": "wh",
+    "body": "while ${0:True}:"
+  },
+  "mm": {
+    "prefix": "mm",
+    // "body": "if __name__=='__main__':"
+    "body": "if __name__=='__main__':\n\t"
+  },
+  "me": {
+    "prefix": "me",
+    "body": "__name__"
+  },
+  "_t": {
+    "prefix": "_t",
+    "body": "__tablename__"
+  },
+  "dd": {
+    "prefix": "dd",
+    "body": "__dict__"
+  },
+  "dm": {
+    "prefix": "dm",
+    "body": "__members__"
+  },
+  "dw": {
+    "prefix": "dw",
+    "body": "def __new__(cls, name, bases, attrs):\n\t"
+  },
+  "mt": {
+    "prefix": "mt",
+    "body": "metaclass="
+  },
+  "n": {
+    "prefix": "n",
+    "body": "None"
+  },
+  "*": {
+    "prefix": "ak",
+    "body": "*args, **kwargs"
+  },
+  "kb": {
+    "prefix": "kb",
+    "body": "break"
+  }
+}

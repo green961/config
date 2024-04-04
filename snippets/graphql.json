@@ -1,0 +1,67 @@
+{
+  // "of": {
+  //   "prefix": "of",
+  //   // "body": "$1 ($2) {\n\t\n}," 类方法不必加 ,
+
+  //   // "body": "$1 ($0) {\n\t\n}" 跟 if 一样不要空行
+  //   "body": "$1($0) {\n}"
+  // },
+  "s": {
+    "prefix": "s",
+    "body": "String"
+  },
+  // "m": {
+  //   "prefix": "m",
+  //   "body": "Mutation"
+  // },
+  // "e": {
+  //   "prefix": "e",
+  //   "body": "enum $1 {\n\t$2\n}\n"
+  // },
+  // "q": {
+  //   "prefix": "q",
+  //   "body": "query $1 {\n\t$2\n}\n"
+  // },
+  // "v": {
+  //   "prefix": "v",
+  //   "body": "type $1 {\n\t$2\n}\n"
+  // },
+
+  // "i": {
+  //   "prefix": "i",
+  //   "body": "${1|input,interface|} $2 {\n\t$3\n}\n"
+  //   // "body": "${2|implements,${1|input,interface|} $0 {\n}\n|}"
+  // },
+  "m": {
+    "prefix": "m",
+    // mutation 没有参数
+    "body": "mutation {\n\t$1\n}\n"
+  },
+
+  "it": {
+    "prefix": "it",
+    "body": "${1|enum,input,interface,query,type|} $2 {\n\t$3\n}\n"
+  },
+  "mq": {
+    "prefix": "mq",
+    "body": "type ${1|Mutation,Query|} {\n\t$2\n}\n"
+  },
+  "h": {
+    "prefix": "h",
+    // addBook 后面不必带空格
+    // addBook(title: String, author: String): Book
+    "body": "$1($2): "
+  },
+  "f": {
+    "prefix": "f",
+    "body": "Float"
+  },
+  "im": {
+    "prefix": "im",
+    "body": "implements "
+  },
+  "b": {
+    "prefix": "b",
+    "body": "Boolean"
+  }
+}

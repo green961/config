@@ -1,0 +1,709 @@
+{
+  "sm": {
+    "prefix": "sm",
+    // $1 必须全手工填写, 不然会出现下面情况
+    // function TableExportRow({ <table></table> }: { <table></table>:  }) {
+    "body": "{ $1 }: { $1: $0 }"
+  },
+  "cz": {
+    "prefix": "cz",
+    "body": "{`${$1}`}"
+  },
+  "eaf": {
+    "prefix": "eaf",
+    "body": "export async function $0 {\n}"
+  },
+
+  "ei": {
+    "prefix": "ei",
+    "body": "export interface "
+  },
+  // "re": {
+  //   "prefix": "re",
+  //   // module: require.resolve('./context'),
+  //   "body": "require."
+  // },
+  "rd": {
+    "prefix": "rd",
+    // 不要默认字符串 会成对出现<>
+    "body": ["return (", "\t<${1:div}>", "\t\t$0", "\t</${1:div}>", ")"]
+    // "body": ["return (", "\t<${1:div}>", "\t\t${0:fuck}", "\t</${1:div}>", ")"]
+
+    // return <h1>Hello New Page</h1>
+    // "body": ["return (", "\t<div>", "\t\t$0", "\t</div>", ")"]
+
+    // "body": "return (\n\t<$0\n)"
+  },
+  "css": {
+    "prefix": "css",
+    "body": "let aa=<div className='$0'"
+  },
+
+  "cc": {
+    "prefix": "cc",
+    "body": ["{", "\tchildren,", "}: {", "\tchildren: React.ReactNode", "}"]
+  },
+  "ql": {
+    "prefix": "ql",
+    "body": "`#graphql\n\t$0\n`\n"
+  },
+  "ub": {
+    "prefix": "ub",
+    // "body": "#!/usr/bin/env node"
+    "body": "#!/usr/bin/env ${1|node,zx|}"
+  },
+  "imu": {
+    "prefix": "imu",
+    "body": "import.meta.url"
+  },
+  "aii": {
+    "prefix": "aii",
+    // await import('./experimental.js')
+    "body": "await import('$0')"
+  },
+  "caf": {
+    "prefix": "caf",
+    "body": "try {\n\t$0\n} finally {\n\n}\n"
+  },
+
+  "i": {
+    "prefix": "i",
+
+    // import 'zx/globals' 带引号参数
+    // import('./chalk.js')  可此例是先括号再引号参数
+    // const g = await import(pathToFileURL(src)) 先括号, 里面还有普通参数
+
+    "body": "import "
+  },
+
+  "az": {
+    "prefix": "az",
+    // const RE_BLOCK_NAME = /^[a-zA-Z$][\w\.$-_]+/
+    "body": "a-zA-Z"
+  },
+  "ss": {
+    "prefix": "ss",
+    // "body": "const [$1, ${1/(.*)/set${1:/capitalize}/}] = "
+
+    // const [showAccountMenu, setShowAccountMenu] = useState(false) 未必是字符串
+    // "body": "const [$1, ${1/(.*)/set${1:/capitalize}/}] = useState('$0')"
+    "body": "const [$1, ${1/(.*)/set${1:/capitalize}/}] = useState($0)"
+  },
+
+  "named capturing group": {
+    "prefix": "cg",
+    // /\bimport\s+['"](?<path>[^'"]+)['"]/,
+    "body": "(?<$1>$0)"
+  },
+  "tn": {
+    "prefix": "tn",
+    // throw err;
+    // throw new Error('cannot get uid or gid')
+    "body": "throw ${1:new Error}"
+  },
+  // "cacf": {
+  //   "prefix": "cacf",
+  //   "body": "try {\n\t\n} catch (${0:error}) {\n\n} finally {\n\n}\n"
+  // },
+
+  "sw": {
+    "prefix": "sw",
+    "body": "switch ($1) {\n\tcase $0:\n\t\tbreak\n}"
+  },
+  "wh": {
+    "prefix": "wh",
+    // } while (arr.some((v: any) => v?.then)) 不带大括号
+    "body": "while ($0)"
+  },
+
+  "if": {
+    "prefix": "if",
+    "body": "if ($0) {\n}"
+  },
+  "of": {
+    "prefix": "of",
+    // "body": "$1 ($2) {\n\t\n}," 类方法不必加 ,
+
+    // "body": "$1 ($0) {\n\t\n}" 跟 if 一样不要空行
+    "body": "$1 ($0) {\n}"
+  },
+  "aof": {
+    "prefix": "aof",
+    // "body": "$1 ($2) {\n\t\n}," 类方法不必加 ,
+
+    // "body": "$1 ($0) {\n\t\n}" 跟 if 一样不要空行
+    "body": "async $1 ($0) {\n}"
+  },
+
+  "el": {
+    "prefix": "el",
+    "body": "else {\n\t$0\n}"
+  },
+  "eif": {
+    "prefix": "eif",
+    "body": "else if ($0) {\n}"
+  },
+  "ag": {
+    "prefix": "ag",
+
+    // type S=(pieces:any,...args:any[]) => P 带了 `:any[]`
+    // value = fn(...args).catch((err) => {   什么都没带
+    "body": "...args"
+  },
+
+  "aa": {
+    "prefix": "aa",
+    "body": "as any"
+  },
+  "ac": {
+    "prefix": "ac",
+    "body": "as const"
+  },
+  // "x": {
+  //   "prefix": "x",
+  //   "body": "'${$1}'"
+  // },
+
+  "z": {
+    "prefix": "z",
+    // 留一个空格好 ${} 插变量
+    // 配合 x 就不需要了
+    "body": "process.stderr.write(`$0\\n`)"
+    // "body": ["/*\n$0", "*/"]
+  },
+  "sa": {
+    "prefix": "sa",
+    "body": "satisfies "
+  },
+  "uu": {
+    "prefix": "uu",
+    "body": "#!/usr/bin/env node\n"
+  },
+  "v": {
+    "prefix": "v",
+    "body": "type "
+  },
+  "ab": {
+    "prefix": "ab",
+    "body": "abstract "
+  },
+  "anoy": {
+    "prefix": "aj",
+    "body": ["async ($1) => {$0}"]
+  },
+  "Object": {
+    "prefix": "o",
+    "body": "object"
+  },
+  "bk": {
+    "prefix": "kb",
+    "body": "break"
+  },
+  // git log --pretty=oneline --abbrev-commit
+  "un": {
+    "prefix": "un",
+    "body": "unknown"
+  },
+  "cj": {
+    "prefix": "cj",
+    // [] 使用频率低
+    "body": "const {$0} = $1"
+    // "body": "${1|const,let|} {$0} = $2"
+  },
+  // "lj": {
+  //   "prefix": "lj",
+  //   "body": "let {$0} = $1"
+  // },
+  "uf": {
+    "prefix": "uf",
+    "body": ["(", "\t<>", "\t\t$0", "\t</>", ")"]
+  },
+  "edf": {
+    "prefix": "edf", // 带上括号防手快, $1有时候需要转大写
+    "body": "export default function $1($0) {\n}"
+  },
+
+  "eda": {
+    "prefix": "eda", // 带上括号防手快, $1有时候需要转大写
+    "body": "export default async function $1($0) {\n}"
+  },
+  "kt": {
+    "prefix": "kt",
+    // type ac = keyof typeof iconMap
+    "body": "keyof typeof "
+  },
+
+  "th": {
+    "prefix": "th",
+    "body": "this"
+  },
+  "ry": {
+    "prefix": "ry",
+    "body": "readonly "
+  },
+  "interface ": {
+    "prefix": "it",
+    "body": "interface "
+  },
+  "ff": {
+    "prefix": "ff",
+    "body": "function"
+  },
+
+  "s": {
+    "prefix": "s",
+    "body": "string"
+  },
+  "tc": {
+    "prefix": "tc",
+    "body": "// @ts-nocheck\n"
+  },
+  "ca": {
+    "prefix": "ca",
+
+    // 因为存在多`case`的可能, 所以 break 应设为可选
+    // 但在实际操作中会直接复制一行下来 向下复制行
+    // case 'stdout':
+    // case 'stderr':
+    //   if (!entry.verbose) return
+
+    // "body": ["case $0:${1:\n\tbreak}"]
+    "body": ["case $0:", "\tbreak"]
+  },
+  // "pas": {
+  //   "prefix": "pas",
+  //   "body": "process.argv.slice(2)"
+  // },
+  "uc": {
+    "prefix": "uc",
+    "body": "'use client'\n"
+  },
+  "us": {
+    "prefix": "us",
+    "body": "'use server'\n"
+  },
+  "cac": {
+    "prefix": "cac",
+    // } catch {
+
+    // "body": "if $2${1| ,;|} err != nil {\n\n}\n"
+    // "body": "try {\n\t$0\n} catch ${1:(error)} {\n\n}\n"
+    "body": "try {\n\t$0\n} catch (${1:error}) {\n\n}\n"
+    // "body": "try {\n\t$0\n} catch ${1|(error), |} {\n\n}\n"
+  },
+  "oo": {
+    "prefix": "oo",
+    "body": "border-${1|b,l,r|}-[$2px] "
+  },
+
+  // "bl": {
+  //   "prefix": "bo",
+  //   "body": "boolean"
+  // },
+  "et": {
+    "prefix": "et",
+    "body": "extends "
+  },
+  "ers": {
+    "prefix": "ers",
+    "body": "extends readonly string[]"
+  },
+  "erk": {
+    "prefix": "erk",
+    "body": "extends readonly (keyof any)[]"
+  },
+  "era": {
+    "prefix": "era",
+    // type A<T extends readonly any[]> = T extends
+    "body": "extends readonly any[]"
+  },
+  "eu": {
+    "prefix": "eu",
+    "body": "extends unknown[]"
+  },
+  "eb": {
+    "prefix": "eb",
+    "body": "extends boolean"
+  },
+  "ef": {
+    "prefix": "ef",
+    "body": "${1|export function ,extends Function|}"
+  },
+  "ean": {
+    "prefix": "ean",
+    "body": ["extends any ? $0", "\t: never\n"]
+  },
+  "ek": {
+    "prefix": "ek",
+    "body": "extends keyof "
+  },
+  "eka": {
+    "prefix": "eka",
+    "body": "extends keyof any"
+  },
+
+  // "xi": {
+  //   "prefix": "xi",
+  //   "body": "type Xian<O extends Record<string, any>> = { [K in keyof O]: O[K] }"
+  // },
+  "eot": {
+    "prefix": "eot",
+
+    // [K in keyof A]: A[K] extends object ? true : false
+    "body": "extends object ? true : false" // 留个空格好接 tf
+  },
+  "m": {
+    "prefix": "m",
+    // 箭头括号有必要, 不然第一次不会弹出 snippet
+    // "body": ["<{", "\t$0[K in keyof O]: O[K]", "}>"] 未必是`O`
+    "body": ["<{", "\t[K in keyof $0]: ", "}>"]
+  },
+  "mp": {
+    "prefix": "mp",
+    // type TTO<T extends readonly string[]> = {
+    //   [P in T[number]]: P 不一定是 keyof
+    // }
+
+    "body": ["{\n\t[K in ${1:keyof }$0]: ", "}"]
+  },
+
+  "eru": {
+    "prefix": "eru",
+    "body": "extends readonly unknown[]"
+  },
+  "st": {
+    "prefix": "st",
+    "body": "static "
+  },
+  "es": {
+    "prefix": "es",
+    "body": "extends string"
+  },
+  "ea": {
+    "prefix": "ea",
+    // type AnyOf<T extends any[]> = 带`[]`
+    "body": "extends any[]"
+  },
+  "ett": {
+    "prefix": "ett",
+    "body": "extends true "
+  },
+  "eat": {
+    "prefix": "eat",
+    "body": "extends any ? true : false"
+  },
+
+  "fu": {
+    "prefix": "fu",
+    // declare function PromiseAll<T extends readonly unknown[] | []>(
+
+    // interface Fuck {
+    //   aa: Function 大写的才能用作类型
+
+    "body": "function "
+    // "body": "function${1: }"
+    // "body": "${1|function ,function|}"
+  },
+
+  "tf": {
+    "prefix": "tf",
+    "body": "? true : false"
+  },
+
+  "ka": {
+    "prefix": "ka",
+    "body": "keyof any"
+  },
+  "ik": {
+    "prefix": "ik",
+    "body": "in keyof "
+  },
+  "at": {
+    "prefix": "at",
+    "body": "as typeof "
+  },
+  "akt": {
+    "prefix": "akt",
+    "body": "as keyof typeof "
+  },
+  "df": {
+    "prefix": "df",
+    // 留个空格好接 snippet
+    "body": "declare function "
+  },
+
+  "d": {
+    "prefix": "d",
+    // d 特指 declare
+    "body": "declare "
+  },
+  "dg": {
+    "prefix": "dg",
+    "body": "declare global "
+  },
+
+  "dc": {
+    "prefix": "dc",
+    "body": "declare const "
+  },
+  "dl": {
+    "prefix": "dl",
+    "body": "declare let "
+  },
+
+  "dv": {
+    "prefix": "dv",
+    "body": "declare type "
+  },
+
+  "e": {
+    "prefix": "e",
+    // e 特指 export
+    "body": "export "
+  },
+  "ec": {
+    "prefix": "ec",
+    "body": "export const "
+  },
+  "ele": {
+    "prefix": "ele",
+    "body": "export let "
+  },
+  "ev": {
+    "prefix": "ev",
+    "body": "export type "
+  },
+
+  "ep": {
+    "prefix": "ep",
+    // "body": "export ${0:path} from '$1'"
+    "body": "export * from '$0'"
+  },
+
+  "import": {
+    "prefix": "ip",
+    // import rule, { RULE_NAME } from './generic-spacing'
+    // "body": "import {$0} from '$1'"  利用 ctrl+shift+\ 跳到大括号前补充, 会变成下面这样
+    // import mongoose from "mongoose"{Schema} from 'mongoose'
+
+    // "body": "import $0 from '$1'" // 需要占位符
+    "body": "import ${0:path} from '$1'"
+
+    // import clsx from 'clsx'
+    // "body": "import ${2:$1} from '$1'" // 不行, 不会弹出模块提示
+  },
+  "ipa": {
+    "prefix": "ipa",
+    // import {Button} from '@/components/ui/button'
+    "body": "import ${0:path} from '@/$1'"
+    // "body": "import ${0:path} from '@/${1:app/}'"
+    // "body": "import ${0:path} from '@/app/$1'"
+  },
+  "ed": {
+    "prefix": "ed",
+    "body": "export default "
+  },
+  "lo": {
+    "prefix": "l",
+    "body": "console.log($0)"
+  },
+  "bl": {
+    "prefix": "bo",
+    "body": "boolean"
+  },
+  "tz": {
+    "prefix": "tz",
+    "body": "// @ts-expect-error "
+  },
+  "import * as": {
+    "prefix": "ia",
+    "body": "import * as $0 from '$1'"
+  },
+  "iat": {
+    "prefix": "iat",
+    "body": "import type * as $0 from '$1'"
+  },
+  "import type": {
+    "prefix": "ipt",
+    "body": "import type {$0} from '$1'"
+  },
+  "fj": {
+    "prefix": "fj",
+    "body": [";(($0) => {\n})()"]
+  },
+  "fc": {
+    "prefix": "fc",
+    "body": [";(function ($0) {\n})()"]
+  },
+  "afj": {
+    "prefix": "afj",
+    "body": [";(async ($0) => {\n})()"]
+  },
+  "afc": {
+    "prefix": "afc",
+    // await (async function main() {
+    "body": ["${1|;,await |}(async function ($0) {\n})()"]
+    // "body": "if $2${1| ,;|} err != nil {\n\n}\n"
+  },
+  "ud": {
+    "prefix": "ud",
+    "body": "undefined"
+  },
+  "y": {
+    "prefix": "y",
+    "body": "yield "
+  },
+  "fop": {
+    "prefix": "fop",
+    // for (pos = start + 1; pos <= max; pos++) { 无 let
+    // for (pos = start + 1; pos <= max; pos++) { 可能是 <=
+    // for (let i = 1; i < params.length; i++) {  从 1 开始
+
+    // 占位符太多了也不好
+    "body": "for (let ${1:i} = 0; ${1:i} <$0; ${1:i}++) {\n}"
+    // "body": "for (${1|let , |}${2:i} = ${3:0}; ${2:i} <$0; ${2:i}++) {\n}"
+  },
+  "foj": {
+    "prefix": "foj",
+    // import { readFileSync } from 'fs'; 冲突
+    "body": "for (let ${1:i} = $0; ${1:i} > -1; ${1:i}--) {\n}"
+  },
+  "fao": {
+    "prefix": "fao",
+    // for (const key in overrides) { 也可能是 in
+
+    // 先填 for 变量, 不然没有提示
+    "body": "for await (const $0) {\n}"
+  },
+  "fo": {
+    "prefix": "fo",
+    // for (const key in overrides) { 也可能是 in
+
+    // 先填 for 变量, 不然没有提示
+    "body": "for (const $0) {\n}"
+  },
+  "namespace": {
+    "prefix": "sp",
+    "body": "namespace "
+  },
+  "jt": {
+    "prefix": "jt",
+    "body": "($1) => $0"
+  },
+  // "Person": {
+  //   "prefix": "pp",
+  //   "body": "interface Person { name: string; age: number }"
+  // },
+  "p": {
+    "prefix": "p",
+
+    // const [invoice,cusomers]=await <Promise className="al"></Promise>
+    // "body": "Promise." 不要带点, 会变成 html tag
+    "body": "Promise"
+  },
+  "ap": {
+    "prefix": "ap",
+    // const data = await Promise.all([
+    // 带`.`的话, 第一项会是 Emmet 缩写
+    "body": "await Promise"
+  },
+  "co": {
+    "prefix": "co",
+    // 带`.`的话, 第一项会是 Emmet 缩写
+    "body": "console"
+  },
+  "pv": {
+    "prefix": "pv",
+    // 应为 1 个参数，但得到的却是 0 个。你是否忘了将类型参数中的 "void" 包含到 "Promise"
+    // resolve()
+
+    "body": ": Promise<void>"
+  },
+  "nu": {
+    "prefix": "nu",
+    "body": "number"
+  },
+  "n": {
+    "prefix": "n",
+    "body": "new "
+  },
+
+  "ps": {
+    "prefix": "ps",
+    // const prom = new Promise<number>((resolve, reject) => { 带类型
+
+    // 参数名不一样, 这样就需要 $2 停留在小括号内, 不然会直接跑到 $0
+    // new Promise<NodeWorker>((r, rj) => {
+    "body": ["new Promise$0 ((${1|resolve\\, reject,resolve, |}$2) => {", "})"]
+  },
+  "ai": {
+    "prefix": "ai",
+    "body": "await "
+  },
+  "async": {
+    "prefix": "a",
+    "body": "async "
+  },
+  "t": {
+    "prefix": "t",
+    "body": "true"
+  },
+  "pu": {
+    "prefix": "pu",
+    "body": "public "
+  },
+  "pr": {
+    "prefix": "pr",
+    "body": "private "
+  },
+  "pt": {
+    "prefix": "pt",
+    "body": "protected "
+  },
+  "h": {
+    "prefix": "h",
+    // $1 后面留个空格是为了方便加泛型 <>
+    "body": "$1 ($2): "
+  },
+  "vo": {
+    "prefix": "vo",
+    "body": "void "
+  },
+
+  "fn": {
+    "prefix": "fn",
+    "body": "function $0 {\n}"
+  },
+  "af": {
+    "prefix": "af",
+    "body": "async function $0 {\n}"
+  },
+  "f": {
+    "prefix": "f",
+    "body": "false"
+  },
+  "typeof": {
+    "prefix": "tp",
+    "body": "typeof "
+  },
+  "const": {
+    "prefix": "c",
+    "body": "const "
+  },
+  "return": {
+    "prefix": "r",
+    "body": "return "
+  },
+  // "class": {
+  //   "prefix": "cl",
+  //   "body": "class $0 {\n}"
+  // },
+  // "lo": {
+  //   "prefix": "l",
+  //   "body": "console.log($0)"
+  // },
+  "cd": {
+    "prefix": "cd",
+    "body": "console.dir($0, { depth: null })"
+  }
+}

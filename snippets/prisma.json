@@ -1,0 +1,129 @@
+{
+  "e": {
+  "prefix": "e",
+  "body": "enum $0 {\n}"
+  },
+  "d": {
+    "prefix": "d",
+    // updatedAt DateTime @updatedAt
+    "body": "DateTime "
+  },
+  "cu": {
+    "prefix": "cu",
+    "body": ["createdAt DateTime @default(now())", "updatedAt DateTime @updatedAt"]
+  },
+  "dt": {
+    "prefix": "dt",
+    // imageUrl       String  @db.Text
+    "body": "@db.Text"
+  },
+  "r": {
+    "prefix": "r",
+    "body": [
+      // "${TM_FILENAME/(.*)/${1:/upcase}/}"
+      // "$1   ${2:${1/(.*)/${1:/capitalize}/}}    @relation(fields: [$1Id], references: [id])",
+      "$1   ${1/(.*)/${1:/capitalize}/}    @relation(fields: [$1Id], references: [id])",
+      "$1Id $0"
+    ]
+  },
+  "rd": {
+    "prefix": "rd",
+    //     "body": [
+    //       "$1   ${1/(.*)/${1:/capitalize}/}    @relation(name: \"$1\", fields: [$1Id], references: [id], onDelete: Cascade)",
+    //       "$1Id $0"
+    //     ]
+    "body": [
+      "$1   ${1/(.*)/${1:/capitalize}/}    @relation(name: \"${1/(.*)/${1:/capitalize}/}\", fields: [$1Id], references: [id], onDelete: Cascade)",
+      "$1Id $0"
+    ]
+  },
+  "ddn": {
+    "prefix": "ddn",
+    "body": "DateTime @default(now())"
+  },
+  "du": {
+    "prefix": "du",
+    "body": "DateTime @updatedAt"
+  },
+  "u": {
+    "prefix": "u",
+    // @@unique([followerId, followingId]) 两个@
+    "body": "@unique"
+  },
+  "iu": {
+    "prefix": "iu",
+    "body": "Int     @unique"
+  },
+  "sdv": {
+    "prefix": "sdv",
+    "body": "String   @db.VarChar($0)"
+  },
+  "id": {
+    "prefix": "id",
+    "body": "Int      @default($0)"
+  },
+  "f": {
+    "prefix": "f",
+    "body": "false"
+  },
+  "t": {
+    "prefix": "t",
+    "body": "true"
+  },
+  "fu": {
+    "prefix": "fu",
+    // @@fulltext([name])
+    "body": "@@fulltext([$0])"
+  },
+  "sdt": {
+    "prefix": "sdt",
+    // name         String  @db.Text
+    "body": "String  @db.Text"
+  },
+  "s": {
+    "prefix": "s",
+    // title     String   @db.VarChar(255)
+    "body": "String "
+  },
+  "bo": {
+    "prefix": "bo",
+    "body": "Boolean"
+  },
+  "dn": {
+    "prefix": "dn",
+    "body": "@default(now())"
+  },
+  "su": {
+    "prefix": "su",
+    "body": "String @unique"
+  },
+  "bdf": {
+    "prefix": "bdf",
+    "body": "Boolean @default(false)"
+  },
+  "bdt": {
+    "prefix": "bdt",
+    "body": "Boolean @default(true)"
+  },
+  "i": {
+    "prefix": "i",
+    // id        Int      @id @default(autoincrement())
+    "body": "Int "
+  },
+  "iid": {
+    "prefix": "iid",
+    // id        Int      @id @default(autoincrement())
+    "body": "Int @id @default(autoincrement())"
+  },
+  "sid": {
+    "prefix": "sid",
+    // id             String  @id @default(uuid())
+    "body": "String  @id @default(uuid())"
+  },
+  "m": {
+    "prefix": "m",
+    "body": "model $1 {\n\tid $0\n}"
+    //   id    String  @id @default(uuid())
+    //   id    Int     @id @default(autoincrement())",
+  }
+}

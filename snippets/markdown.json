@@ -1,0 +1,50 @@
+{
+  "re": {
+    "prefix": "re",
+    "body": "<font color=\"red\">$0</font>"
+  },
+  "pic": {
+    "prefix": "pic",
+    "body": "[![$1][${2:1}]][$2]\n\n[$2]: $1"
+  },
+  "ct": {
+    "prefix": "ct",
+    "body": "![img]($0)"
+  },
+  "s": {
+    "prefix": "s",
+    "body": "~~$0~~"
+  },
+  "d": {
+    "prefix": "k",
+    "body": "`$0`"
+  },
+  "js": {
+    "prefix": "mt",
+    "body": "```$0\n```"
+  },
+  "x": {
+    "prefix": "x",
+    "body": "_$1_ "
+  },
+  "red": {
+    "prefix": "red",
+    "body": "<span style=\"color:red\">$1</span>"
+  },
+  "r": {
+    "prefix": "r",
+    "body": "<br>"
+  },
+  "pt": {
+    "prefix": "l",
+    "body": "[$1]($0)"
+  }
+  // "x": {
+  //   "prefix": "x",
+  //   "body": "<u>$0</u>"
+  // },
+  // "y": {
+  //   "prefix": "y",
+  //   "body": "> "
+  // },
+}

@@ -1,0 +1,460 @@
+{
+  "st": {
+    "prefix": "st",
+    "body": "${1|SHOW TABLES;,SET TABLESPACE |}"
+  },
+
+  "sd": {
+    "prefix": "sd",
+    "body": "SHOW DATABASES;"
+  },
+  "tee": {
+    "prefix": "tee",
+    "body": "THEN $1 ELSE $2 END"
+  },
+  "dsc": {
+    "prefix": "dsc",
+    "body": "DROP SCHEMA $0 CASCADE;"
+  },
+  "cs": {
+    "prefix": "cs",
+    "body": "CREATE SCHEMA "
+  },
+  "cr": {
+    "prefix": "cr",
+    "body": "CREATE ROLE "
+  },
+  "cl": {
+    "prefix": "cl",
+    "body": "CONNECTION LIMIT "
+  },
+  "ad": {
+    "prefix": "ad",
+    "body": "ALTER DATABASE "
+  },
+  // "l": {
+  //   "prefix": "l",
+  //   "body": "LIMIT "
+  // },
+  "pu": {
+    "prefix": "pu",
+    // 是一个字符串
+    // SELECT * FROM pg_tables WHERE schemaname='public';
+    "body": "public"
+  },
+  "cw": {
+    "prefix": "cw",
+    "body": "CASE WHEN "
+  },
+  "lcp": {
+    "prefix": "lcp",
+    "body": "LOGIN CREATEDB PASSWORD "
+  },
+  "sf": {
+    "prefix": "sf",
+    "body": "SELECT * FROM "
+  },
+  "wn": {
+    "prefix": "wn",
+    "body": "WHERE NOT "
+  },
+  "as": {
+    "prefix": "as",
+    "body": "ALTER SCHEMA "
+  },
+  "f": {
+    "prefix": "f",
+    // locked boolean NOT NULL DEFAULT false,
+    "body": "false"
+  },
+  "t": {
+    "prefix": "t",
+    // "body": "true"
+    "body": "TEXT"
+  },
+  "i": {
+    "prefix": "i",
+    // "body": "INT "
+    "body": "INTEGER"
+  },
+  "tt": {
+    "prefix": "tt",
+    "body": "TRUNCATE TABLE "
+  },
+  "cu": {
+    "prefix": "cu",
+    "body": "create user "
+  },
+  "u": {
+    "prefix": "u",
+    "body": "UPDATE "
+  },
+  "bo": {
+    "prefix": "bo",
+    // locked boolean NOT NULL DEFAULT false,
+    "body": "boolean "
+  },
+  "rt": {
+    "prefix": "rt",
+    "body": "RENAME TO "
+  },
+  "ot": {
+    "prefix": "ot",
+    "body": "OWNER TO "
+  },
+
+  "udu": {
+    "prefix": "udu",
+    "body": "UUID DEFAULT uuid_generate_v4() "
+  },
+  "jo": {
+    "prefix": "jo",
+    "body": "JOIN $1 ON "
+  },
+  "ac": {
+    "prefix": "ac",
+    "body": "${1|ADD CONSTRAINT,ADD COLUMN,ALTER COLUMN|} "
+  },
+  "snn": {
+    "prefix": "snn",
+    "body": "SET NOT NULL"
+  },
+  "rc": {
+    "prefix": "rc",
+    "body": "RENAME COLUMN "
+  },
+  "cdi": {
+    "prefix": "cdi",
+    "body": "CREATE DATABASE IF NOT EXISTS "
+  },
+  "cc": {
+    "prefix": "cc",
+    "body": "CHANGE COLUMN "
+  },
+  "iii": {
+    "prefix": "iii",
+    "body": "INSERT IGNORE INTO "
+  },
+  "d": {
+    "prefix": "d",
+    "body": "DOUBLE "
+  },
+  "dc": {
+    "prefix": "dc",
+    "body": "DROP COLUMN "
+  },
+  "dti": {
+    "prefix": "dti",
+    "body": "DROP TABLE IF EXISTS "
+  },
+  "sa": {
+    "prefix": "sa",
+    // SELECT AVG(score) average FROM students WHERE gender = 'M';
+
+    "body": "SELECT AVG"
+  },
+  "odk": {
+    "prefix": "odk",
+    "body": "ON DUPLICATE KEY UPDATE "
+  },
+  "m": {
+    "prefix": "m",
+    "body": [
+      "--AND,authorization,AUTO_INCREMENT,AVG,BEGIN,cascade,COMMIT,conflict,constraint,count,current_date,current_schema,current_timestamp,current_user,default,DESC,escape_string_warning,extension,FROM,IF,ilike,integer,LIMIT,location,mediumint,month,nothing,nspacl,nspname,OFFSET,ON,OR,primary,public,REFERENCES,relkind,relname,relnamespace,reltablespace,restrict,schemaname,search_path,SELECT,session_user,SET,table,timestamp,union,UNIQUE,UPDATE,USE,VALUES,varchar,WHERE,ROLLBACK",
+      "\n$0"
+    ]
+  },
+  "fi": {
+    "prefix": "fi",
+    "body": "FORCE INDEX "
+  },
+  "roj": {
+    "prefix": "roj",
+    "body": "RIGHT OUTER JOIN "
+  },
+  "ri": {
+    "prefix": "ri",
+    "body": "REPLACE INTO "
+  },
+  "sc": {
+    "prefix": "sc",
+    "body": "SELECT COUNT(*) "
+  },
+  "scf": {
+    "prefix": "scf",
+    // SELECT COUNT(*) num FROM students;
+
+    "body": "SELECT COUNT(*) FROM "
+  },
+  "p": {
+    "prefix": "p",
+    "body": [
+      "--AND,authorization,AUTO_INCREMENT,AVG,BEGIN,boolean,cascade,COMMIT,conflict,constraint,count,current_date,current_schema,current_timestamp,current_user,DATE,default,DESC,escape_string_warning,extension,FROM,IF,ilike,integer,LIMIT,location,mediumint,month,nothing,nspacl,nspname,OFFSET,ON,OR,pg_available_extensions,pg_class,pg_column_size,pg_database,pg_default,pg_indexes_size,pg_namespace,pg_relation_size,pg_size_pretty,pg_stat_activity,pg_tables,pg_tablespace,pg_tablespace_size,pg_total_relation_size,primary,public,REFERENCES,relkind,relname,relnamespace,reltablespace,restrict,ROLLBACK,schemaname,search_path,SELECT,session_user,SET,table,timestamp,union,UNIQUE,UPDATE,USE,VALUES,varchar,WHERE,ADD,TO,TEXT",
+      "\n$0"
+    ]
+  },
+  "j": {
+    "prefix": "j",
+    "body": "JSONB"
+  },
+  "inn": {
+    "prefix": "inn",
+    "body": "INTEGER NOT NULL"
+  },
+  "bnn": {
+    "prefix": "bnn",
+    "body": "BOOLEAN NOT NULL DEFAULT FALSE"
+  },
+  "tnn": {
+    "prefix": "tnn",
+    "body": "TEXT NOT NULL"
+  },
+  "lj": {
+    "prefix": "lj",
+    "body": "LEFT JOIN "
+  },
+  "ob": {
+    "prefix": "ob",
+    "body": "ORDER BY "
+  },
+  "dd": {
+    "prefix": "dd",
+    "body": "DROP DATABASE "
+  },
+  "dt": {
+    "prefix": "dt",
+    "body": "${1|DROP TABLE,DROP TABLESPACE|} "
+  },
+  "s": {
+    "prefix": "s",
+    "body": "SERIAL "
+  },
+  "b": {
+    "prefix": "b",
+    "body": "BIGINT "
+  },
+  "ct": {
+    "prefix": "ct",
+    "body": "CREATE TABLE "
+    // "body": "CREATE ${1|TABLE,TABLESPACE|} "
+  },
+  "cti": {
+    "prefix": "cti",
+    "body": "CREATE TABLE IF NOT EXISTS "
+  },
+  "wnd": {
+    "prefix": "wnd",
+    "body": "WITH NO DATA"
+  },
+  "cta": {
+    "prefix": "cta",
+
+    "body": "CREATE TABLE $1 AS TABLE "
+  },
+  "cd": {
+    "prefix": "cd",
+    "body": "CREATE DATABASE "
+  },
+  "ie": {
+    "prefix": "ie",
+    "body": "IF EXISTS "
+  },
+  "ine": {
+    "prefix": "ine",
+    "body": "IF NOT EXISTS "
+  },
+  "dr": {
+    "prefix": "dr",
+    "body": "DROP ROLE "
+  },
+  "lp": {
+    "prefix": "lp",
+    "body": "LOGIN PASSWORD "
+  },
+  "csa": {
+    "prefix": "csa",
+    "body": "CREATE SCHEMA AUTHORIZATION "
+  },
+  "ni": {
+    "prefix": "ni",
+    // WHERE nspname not in('pg_catalog', 'info' )
+    "body": "NOT IN('"
+  },
+  "in": {
+    "prefix": "in",
+    // WHERE nspacl is null and nspname NOT LIKE 'pg_%'
+    "body": "IS NULL "
+  },
+  "nn": {
+    "prefix": "nn",
+    "body": "NOT NULL"
+  },
+  "nna": {
+    "prefix": "nna",
+    "body": "NOT NULL AUTO_INCREMENT"
+  },
+  "ds": {
+    "prefix": "ds",
+    "body": "drop schema "
+  },
+  "nl": {
+    "prefix": "nl",
+    //     nspname NOT LIKE 'pg_%'
+    "body": "NOT LIKE "
+  },
+  // "w": {
+  //   "prefix": "w",
+  //   "body": "WHERE "
+  // },
+  "wt": {
+    "prefix": "wt",
+    "body": "WITH TEMPLATE "
+  },
+
+  "iu": {
+    "prefix": "iu",
+
+    "body": "INT UNSIGNED "
+  },
+  "iud": {
+    "prefix": "iud",
+    // dealer  CHAR(20)   DEFAULT ''  NOT NULL,
+    "body": "INT UNSIGNED DEFAULT '"
+  },
+  "df": {
+    "prefix": "df",
+    "body": "DELETE FROM "
+  },
+  "sct": {
+    "prefix": "sct",
+    "body": "SHOW CREATE TABLE "
+  },
+  "ouc": {
+    "prefix": "ouc",
+    "body": "ON UPDATE CASCADE"
+  },
+  // "our": {
+  //   "prefix": "our",
+  //   "body": "ON UPDATE RESTRICT"
+  // },
+  "odc": {
+    "prefix": "odc",
+    "body": "ON DELETE CASCADE"
+  },
+  "ce": {
+    "prefix": "ce",
+    "body": "CREATE EXTENSION "
+  },
+  "cei": {
+    "prefix": "cei",
+    "body": "CREATE EXTENSION IF NOT EXISTS "
+  },
+
+  "spk": {
+    "prefix": "spk",
+    // ID serial PRIMARY KEY, 整行
+    // 把 serial 改成 SERIAL PRIMARY KEY
+    "body": "SERIAL PRIMARY KEY"
+  },
+  "nnd": {
+    "prefix": "nnd",
+    "body": "NOT NULL DEFAULT "
+  },
+  "ei": {
+    "prefix": "ei",
+    "body": "ENGINE=InnoDB "
+  },
+  "dcu": {
+    "prefix": "dcu",
+    "body": "DEFAULT CHARSET=utf8"
+  },
+  "pk": {
+    "prefix": "pk",
+    // id INTEGER NOT NULL PRIMARY KEY,
+    //                     PRIMARY KEY(hobby_id),
+    "body": "PRIMARY KEY"
+  },
+  "ii": {
+    "prefix": "ii",
+    "body": "INSERT INTO "
+  },
+  "iga": {
+    "prefix": "iga",
+    // delivery_id int generated always as identity primary key, 整行
+    "body": "INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,\n"
+  },
+  "nnu": {
+    "prefix": "nnu",
+    "body": "NOT NULL UNIQUE"
+  },
+  "v": {
+    "prefix": "v",
+    "body": "VARCHAR($1) "
+  },
+  "dfk": {
+    "prefix": "dfk",
+    "body": "DROP FOREIGN KEY "
+  },
+  "ai": {
+    "prefix": "ai",
+    "body": "ADD INDEX "
+  },
+  "aui": {
+    "prefix": "aui",
+    "body": "ADD UNIQUE INDEX "
+  },
+  "cv": {
+    "prefix": "cv",
+    "body": "CREATE VIEW "
+  },
+  "fk": {
+    "prefix": "fk",
+    // foreign key (parent_id)
+
+    "body": "FOREIGN KEY ($0)"
+  },
+  "em": {
+    "prefix": "em",
+    "body": "engine=myisam"
+  },
+  "at": {
+    "prefix": "at",
+    "body": "ALTER TABLE "
+  },
+  "dfw": {
+    "prefix": "dfw",
+    "body": "DELETE FROM $1 WHERE "
+  },
+  "iiv": {
+    "prefix": "iiv",
+    // 在使用格式化工具之前,
+    // 可能会有多个值, `values`后面还是接空格
+    // values (1, 'Football', NOW()), (1, 'Swimming', NOW());
+    // 这样的话肯定得分两行, 不必接空格, 不然末尾总拖个空格
+
+    // 采用格式化工具, `values`是在同一行, 还是得接空格
+
+    // "body": "INSERT INTO $0 VALUES()"
+    // "body": ["INSERT INTO $1", "VALUES ($0)"]
+    "body": ["INSERT INTO $1", "VALUES "]
+    // "body": ["INSERT INTO $1($2)", "VALUES ($0)"]
+
+    // VALUES (${user.id}, ${user.name}, ${user.email}, ${hashedPassword})
+    // ON CONFLICT (id) DO NOTHING; 后面还有语句
+  },
+  "ocd": {
+    "prefix": "ocd",
+    // ON        CONFLICT (MONTH) DO NOTHING;
+    // ON CONFLICT (id) DO NOTHING; 未必里面是id
+    "body": "ON CONFLICT ($0) DO NOTHING;"
+    // "body": "ON CONFLICT (id) DO NOTHING;"
+  },
+  "ij": {
+    "prefix": "ij",
+    "body": "INNER JOIN "
+  },
+  "gb": {
+    "prefix": "gb",
+    "body": "GROUP BY "
+  }
+}

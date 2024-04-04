@@ -1,0 +1,258 @@
+{
+  "ld": {
+    "prefix": "ld",
+    "body": "#include \"$0\""
+  },
+  "lu": {
+    "prefix": "lu",
+    "body": "#include <unistd.h>\n"
+  },
+  "lp": {
+    "prefix": "lp",
+    "body": "#include <pthread.h>\n"
+  },
+  "lsi": {
+    "prefix": "lsi",
+    "body": "#include <csignal>\n"
+  },
+  "ls": {
+    "prefix": "ls",
+    "body": "#include <stdexcept>\n"
+  },
+  "le": {
+    "prefix": "le",
+    "body": "#include <exception>\n"
+  },
+  "lf": {
+    "prefix": "lf",
+    "body": "#include <fstream>\n"
+  },
+  "lv": {
+    "prefix": "lv",
+    "body": "#include <vector>\n"
+  },
+  "lg": {
+    "prefix": "lg",
+    "body": "#include <cstring>\n"
+  },
+  "la": {
+    "prefix": "la",
+    "body": "#include <assert.h>\n"
+  },
+  "go": {
+    "prefix": "go",
+    "body": "g++ $0 -o fuck"
+  },
+  "fa": {
+    "prefix": "fa",
+    "body": "false"
+  },
+  "n": {
+    "prefix": "n",
+    "body": "new "
+  },
+  "de": {
+    "prefix": "de",
+    "body": "delete "
+  },
+  "sp": {
+    "prefix": "sp",
+    "body": "namespace "
+  },
+  "op": {
+    "prefix": "op",
+    "body": "operator"
+  },
+  "ci": {
+    "prefix": "ci",
+    "body": "cin >> "
+  },
+  "ow": {
+    "prefix": "ow",
+    "body": "throw "
+  },
+  "li": {
+    "prefix": "li",
+    "body": "#include <iostream>\n"
+  },
+  "ll": {
+    "prefix": "ll",
+    "body": "#include <limits>\n"
+  },
+  "lc": {
+    "prefix": "lc",
+    "body": "#include <ctime>\n"
+  },
+  "lm": {
+    "prefix": "lm",
+    "body": "#include <iomanip>\n"
+  },
+  "us": {
+    "prefix": "us",
+    "body": "using namespace "
+  },
+  "te": {
+    "prefix": "te",
+    "body": "template <"
+  },
+  "sg": {
+    "prefix": "sg",
+    "body": "string "
+  },
+  "fo": {
+    "prefix": "fo",
+    "body": "for(int ${1:i}=0; ${1:i}<$0; ${1:i}++) {\n}"
+  },
+  "lb": {
+    "prefix": "lb",
+    "body": "#include <cstdlib>\n"
+  },
+  "u": {
+    "prefix": "u",
+    "body": "using namespace std;\n"
+  },
+  "an": {
+    "prefix": "an",
+    "body": "NULL"
+  },
+  "l": {
+    "prefix": "l",
+    "body": "long "
+  },
+  "d": {
+    "prefix": "d",
+    "body": "double "
+  },
+  "m": {
+    "prefix": "m",
+    "body": "int main() {\n\t$0\n}"
+  },
+  "ch": {
+    "prefix": "ch",
+    "body": "char "
+  },
+  "sh": {
+    "prefix": "sh",
+    "body": "short "
+  },
+  "un": {
+    "prefix": "un",
+    "body": "unsigned "
+  },
+  "v": {
+    "prefix": "v",
+    "body": "void "
+  },
+  "pr": {
+    "prefix": "pr",
+    "body": "private "
+  },
+  "fr": {
+    "prefix": "fr",
+    "body": "friend "
+  },
+  "ii": {
+    "prefix": "ii",
+    "body": "inline "
+  },
+  "th": {
+    "prefix": "th",
+    "body": "this->"
+  },
+  "tu": {
+    "prefix": "tu",
+    "body": "true"
+  },
+  "pt": {
+    "prefix": "pt",
+    "body": "protected "
+  },
+  "st": {
+    "prefix": "st",
+    "body": "static "
+  },
+  "wh": {
+    "prefix": "wh",
+    "body": "while($0)"
+  },
+  "sc": {
+    "prefix": "sc",
+    "body": "struct "
+  },
+  "cl": {
+    "prefix": "cl",
+    "body": "class "
+  },
+  "p": {
+    "prefix": "p",
+    "body": "public "
+  },
+  "b": {
+    "prefix": "b",
+    "body": "bool "
+  },
+  "vi": {
+    "prefix": "vi",
+    "body": "virtual "
+  },
+  "se": {
+    "prefix": "se",
+    "body": "<< std::endl"
+  },
+  "c": {
+    "prefix": "c",
+    "body": "cout << $0 << endl;"
+  },
+  "td": {
+    "prefix": "td",
+    "body": "typedef "
+  },
+  "ty": {
+    "prefix": "ty",
+    "body": "typename "
+  },
+  "tt": {
+    "prefix": "tt",
+    "body": "template <typename T> "
+  },
+  "et": {
+    "prefix": "et",
+    "body": "extern "
+  },
+  "i": {
+    "prefix": "i",
+    "body": "int "
+  },
+  "co": {
+    "prefix": "co",
+    "body": "const "
+  },
+  "f": {
+    "prefix": "f",
+    "body": "float "
+  },
+  "r": {
+    "prefix": "r",
+    "body": "return "
+  },
+  "df": {
+    "prefix": "df",
+    "body": "#define "
+  },
+  "re": {
+    "prefix": "re",
+    "body": "register "
+  },
+  "t": {
+    "prefix": "t",
+    "body": "<< \"\\t\" << "
+  },
+  "si": {
+    "prefix": "si",
+    "body": "sizeof($0)"
+  },
+  "en": {
+    "prefix": "en",
+    "body": "<< endl"
+  }
+}

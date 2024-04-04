@@ -1,0 +1,671 @@
+{
+  "pls": {
+    "prefix": "pls",
+    "body": "public List<String> "
+  },
+  "sd": {
+    "prefix": "sd",
+    "body": "static Double "
+  },
+  "psb": {
+    "prefix": "psb",
+    "body": "public static byte[] "
+  },
+  "te": {
+    "prefix": "te",
+    // "body": "throws ${0:Exception}"
+    // public static void main(String[] args) throws {Exception}
+
+    // 还是用1 因为有可能就是这个 还能用一下tab跳到尾
+    "body": "throws ${1:Exception }"
+  },
+  "cc": {
+    "prefix": "cc",
+
+    // var l = s.filter(s -> s != null && !s.isBlank()).collect(Collectors.toList());
+    // var l = s.filter(s -> s != null && !s.isBlank()).collect(Collectors.toSet());
+
+    // "body": "$1.stream().map($0::new).collect(Collectors.toList());"
+    // "body": ".collect(Collectors.toList());" // 不带`.`不会出提示
+
+    // var map = stream
+    //     .collect(Collectors.toMap(
+    //         // 把元素s映射为key:
+    //         s -> s.substring(0, s.indexOf(':')),
+    //         // 把元素s映射为value:
+    //         s -> s.substring(s.indexOf(':') + 1)));
+
+    // var groups = list.stream()
+    //     .collect(Collectors.groupingBy(s -> s.substring(0, 1), Collectors.toList()));
+
+    // System.out.println(i.collect(Collectors.toList())); 不需要末尾`;`
+    "body": ".collect(Collectors.$0)" // 只能到这里
+
+    // "body": "${1|.collect(Collectors.toList,.collect(Collectors.toSet,.collect(Collectors.toMap|}"
+    // "body": ".collect(Collectors.${1|toMap,toList,toSet|}($0));"
+    // "body": ".collect(Collectors.${1|toMap,toList,toSet|}($0, null));"
+  },
+  "psf": {
+    "prefix": "psf",
+    // "body": "${1|public static final,public static final int,public static final Object,public static final String,private static final long,private static final|} "
+    // 不带类型
+    "body": "${1|public static final,private static final|} "
+  },
+  "no": {
+    "prefix": "no",
+    "body": "new Object();"
+  },
+  "re": {
+    "prefix": "re",
+    "body": "record "
+  },
+  "pfi": {
+    "prefix": "pfi",
+    "body": "public final int "
+  },
+  "sf": {
+    "prefix": "sf",
+    "body": "static final "
+  },
+  "mss": {
+    "prefix": "mss",
+    "body": "Map<String, String> "
+  },
+  "b": {
+    "prefix": "b",
+    // , byte[] message, byte[] sig)
+    // "body": "byte[] "
+    "body": "byte "
+  },
+  "pss": {
+    "prefix": "pss",
+    "body": "public synchronized static "
+    // "body": "${1|public static String,public synchronized String,public synchronized static void,private static String|} "
+  },
+  "pfl": {
+    "prefix": "pfl",
+    "body": "private final Lock "
+  },
+  "st": {
+    "prefix": "st",
+    "body": "static "
+  },
+  "pfv": {
+    "prefix": "pfv",
+    "body": "protected final void "
+  },
+  "psi": {
+    "prefix": "psi",
+    "body": "public static int "
+  },
+  // "psf": {
+  //   "prefix": "psf",
+  //     // 编译器会自动加上public statc final:
+  //   "body": "public static final int "
+  // },
+  "dv": {
+    "prefix": "dv",
+    "body": "default void "
+  },
+  "pa": {
+    "prefix": "pa",
+    "body": "${1|public abstract,protected abstract|} "
+  },
+  "ab": {
+    "prefix": "ab",
+    "body": "abstract "
+  },
+  "it": {
+    "prefix": "it",
+    "body": "interface "
+  },
+  "im": {
+    "prefix": "im",
+    "body": "implements "
+  },
+  "pav": {
+    "prefix": "pav",
+    "body": "public abstract void "
+  },
+  "ac": {
+    "prefix": "ac",
+    "body": "abstract class "
+  },
+  "ps": {
+    "prefix": "ps",
+    // public String getName() {
+    "body": "${1|public static,private static|} "
+    // "body": "${1|public static,public String,private String,protected String|} "
+  },
+  "rn": {
+    "prefix": "rn",
+    "body": "${1|return new ,return null;|}"
+  },
+  "pv": {
+    "prefix": "pv",
+    "body": "${1|public void,private void|} "
+  },
+  "pi": {
+    "prefix": "pi",
+    "body": "${1|public int,private int,public @interface,public interface|} "
+  },
+  "pu": {
+    "prefix": "pu",
+    "body": "public "
+  },
+  "pd": {
+    "prefix": "pd",
+    "body": "${1|public double,private double,protected double|} "
+  },
+  "psd": {
+    "prefix": "psd",
+    "body": "public static double "
+  },
+  "t": {
+    "prefix": "t",
+    "body": "true"
+  },
+  "f": {
+    "prefix": "f",
+    "body": "false"
+  },
+  "pfs": {
+    "prefix": "pfs",
+    "body": "public final String "
+  },
+  "fc": {
+    "prefix": "fc",
+    "body": "final class "
+  },
+  "pb": {
+    "prefix": "pb",
+    "body": "${1|public boolean,public byte,private byte|} "
+  },
+  "sv": {
+    "prefix": "sv",
+    "body": "${1|static void,String value()|} "
+  },
+  "fi": {
+    "prefix": "fi",
+    "body": "final int "
+  },
+  "pc": {
+    "prefix": "pc",
+    "body": "public class "
+  },
+  "pr": {
+    "prefix": "pr",
+    "body": "private "
+  },
+  "r": {
+    "prefix": "r",
+    "body": "return "
+  },
+  "th": {
+    "prefix": "th",
+    // this("Unnamed");
+    // this.count++;
+    "body": "this"
+  },
+  "pt": {
+    "prefix": "pt",
+    "body": "protected "
+  },
+  // "su": {
+  //   "prefix": "su",
+  //   //                    super(name, age);
+  //   // return "Hello, " + super.name;
+  //   "body": "${1|super,@SuppressWarnings(\"unchecked\")|}"
+  // },
+  "c": {
+    "prefix": "c",
+    // "body": "Class<$0>"
+    "body": "char "
+  },
+  "rns": {
+    "prefix": "rns",
+    // return new String[0];
+    "body": "return new String"
+  },
+  "ro": {
+    "prefix": "ro",
+    // return Optional.empty();
+    "body": "return Optional."
+  },
+  "pos": {
+    "prefix": "pos",
+    // public Optional<String> readFromFile(String file) {
+    "body": "public Optional<String> "
+  },
+  "psc": {
+    "prefix": "psc",
+    "body": "public sealed class "
+  },
+  // "pe": {
+  //   "prefix": "pe",
+  //   "body": "permits "
+  // },
+  "is": {
+    "prefix": "is",
+    // "body": "${1|instanceof,import static|} "
+    "body": "import static "
+  },
+  "po": {
+    "prefix": "po",
+    // private Object[] array;
+    // public  Object get(int index) {
+    "body": "private Object "
+  },
+  "ls": {
+    "prefix": "ls",
+    "body": "List<String> "
+  },
+  "ln": {
+    "prefix": "ln",
+    "body": "List<Number> "
+  },
+  "lei": {
+    "prefix": "lei",
+    "body": "List<? extends Integer> "
+  },
+  "ic": {
+    "prefix": "ic",
+    "body": "implements Comparable<$0>"
+  },
+  "si": {
+    "prefix": "si",
+    "body": "${1|static int ,super Integer|}"
+  },
+  "en": {
+    "prefix": "en",
+    "body": "extends Number"
+  },
+  "o": {
+    "prefix": "o",
+    // "body": "${1|Object ,Objects.|}"
+    "body": "Object"
+  },
+  "d": {
+    "prefix": "d",
+    "body": "double "
+    // "body": "double"
+  },
+  "l": {
+    "prefix": "l",
+    // var ls = List.of("1").stream().mapToLong(Long::parseLong);
+    // class SumTask extends      RecursiveTask<Long> {
+    "body": "long "
+  },
+
+  "ms": {
+    "prefix": "ms",
+    "body": "Map<String, "
+  },
+  "qs": {
+    "prefix": "qs",
+    "body": "Queue<String> "
+  },
+  "ds": {
+    "prefix": "ds",
+    "body": "Deque<String> "
+  },
+  "u8": {
+    "prefix": "u8",
+    "body": "\"UTF-8\""
+  },
+  "tyc": {
+    "prefix": "tyc",
+    // try (InputStream input = this.sock.getInputStream()) {
+    "body": ["try$0 {", "} catch (${1:Exception} e) {", "\n}"]
+    // "body": ["try {", "\t$0", "} catch (${1:Exception} e) {", "\n}"]
+  },
+  "tycf": {
+    "prefix": "tycf",
+
+    "body": ["try$0 {", "} catch (${1:Exception} e) {", "\n} finally {", "\n}"]
+  },
+  "tyf": {
+    "prefix": "tyf",
+    "body": ["try {", "\t$0", "} finally {", "\n}"]
+  },
+  "pvb": {
+    "prefix": "pvb",
+    "body": "public volatile boolean "
+  },
+  "ty": {
+    "prefix": "ty",
+    // "body": "catch ($0) {\n}"
+    // "body": "${1|try,catch|} ($0) {\n}"
+    "body": "try ($0) {\n}"
+  },
+
+  "ss": {
+    "prefix": "ss",
+    "body": "${1|Set<String>,static String|} "
+  },
+  "pl": {
+    // private List<T> list = new ArrayList<>();
+    "prefix": "pl",
+    "body": "${1|public long,private List<T>,private long|} "
+  },
+  "jt": {
+    "prefix": "jt",
+    // cf.thenAccept((result) -> {
+    //     System.out.println("price: " + result);
+    // });
+    // Arrays.sort(array, (s1, s2) -> s1.compareTo(s2)); 单行
+
+    "body": "($1) -> "
+    // "body": "($0) -> {\n}" // 还是这样好 直接ctrl+enter来到下一行
+    // "body": "($1) -> {\n\t$0\n}"
+    // "body": "() -> {\n\t$0\n}"
+  },
+  "for": {
+    "prefix": "for",
+    "body": "for (;;) {\n\t$0\n}"
+  },
+  "na": {
+    "prefix": "na",
+    "body": "new ArrayList<>();"
+  },
+  "msi": {
+    "prefix": "msi",
+    // "body": "Map<String, Integer> "
+    "body": "Map<String, Integer> ${1:map}"
+  },
+  "fl": {
+    "prefix": "fl",
+    "body": "float "
+  },
+  "pfc": {
+    "prefix": "pfc",
+    "body": "${1|public final class,private final Condition|} "
+  },
+  "et": {
+    "prefix": "et",
+    "body": "extends "
+  },
+  "tn": {
+    "prefix": "tn",
+    // throw new NullPointerException();
+    "body": "throw new "
+    // "body": "throw ${1:new }"
+  },
+  "vo": {
+    "prefix": "vo",
+    "body": "void "
+  },
+  "psv": {
+    "prefix": "psv",
+    // 错误: 在类 Hello 中找不到 main(String[]) 方法
+    "body": "public static void main(String[] args) {\n\t$0\n}"
+    // "body": "${1|public static void main(String[] args),public synchronized void,public static void,private static void|} "
+    // "body": "public static void main"
+  },
+  "sc": {
+    "prefix": "sc",
+    "body": "static class "
+  },
+  "s": {
+    "prefix": "s",
+    // .map(String::trim)
+    //      String s = "fuck";
+    "body": "String " // 可以留空格
+  },
+  "ns": {
+    "prefix": "ns",
+    // g.setNames( new String[] {"Xiao Ming", "Xiao Hong", "Xiao Jun"});
+    // String s2 = new String(new char[] {'H', 'e', 'l', 'l', 'o', '!'});
+
+    "body": "${1|new String,new StringBuilder|}"
+    // "body": "new String[] { $0 }"
+  },
+  "nc": {
+    "prefix": "nc",
+    //                 new Class[] { Hello.class },传入要实现的接口
+    // char[] buffer = new char[1000];
+    "body": "${1|new char,new Class|}[$0]" // 留`,`是因为后面还有参数
+    // "body": "${1|new char,new Class|}[] { $0 }," // 留`,`是因为后面还有参数
+  },
+  "ymd": {
+    "prefix": "ymd",
+    // "body": "yyyy-MM-dd HH:mm:ss"
+    // "body": "\"yyyy-MM-dd HH:mm:ss\""
+    // "body": "\"yyyy${1:-}MM$1dd HH:mm:ss\""
+
+    // DateTimeFormatter.ofPattern("E, yyyy-MMMM-dd HH:mm", Locale.US);
+    "body": "yyyy${1:-}MM$1dd HH:mm:ss" // 不要`"`
+
+    // "body":                        "\"yyyy${0:-}MM$0dd HH:mm:ss\""
+    //            $0不能使用默认值,后面的会没有 yyyy-MMdd
+    // var dtf = DateTimeFormatter.ofPattern("yyyy-MMdd HH:mm:ss");
+  },
+  "psl": {
+    "prefix": "psl",
+    "body": "public static long "
+  },
+  // "hms": {
+  // "prefix": "hms",
+  // "body": "HH:mm:ss"
+  // },
+  "g9": {
+    "prefix": "g9",
+    // "body": "\"GMT+09:00\""
+    "body": "\"GMT+0${1:9}:00\""
+  },
+  "lnc": {
+    "prefix": "lnc",
+    "body": ["$1.class.getClassLoader(),", "new Class[] { $1.class },\n"]
+  },
+  "rt": {
+    "prefix": "rt",
+    "body": "return this"
+  },
+  "ni": {
+    "prefix": "ni",
+    // Score s = new Score(new int[] { 88, 77, 51, 66 });
+    // int[] ns =          new int[] { 68, 79, 91, 85, 62 };
+    //                     new Integer[3]
+    "body": "${1|new int,new Integer|}"
+    // "body": "new int[] { $0 }"
+  },
+  "in": {
+    "prefix": "in",
+    "body": "Integer[]::new"
+  },
+  "li": {
+    "prefix": "li",
+    "body": "List<Integer>"
+  },
+  "p": {
+    "prefix": "p",
+    // System.out.println(x);
+    "body": "System.out.println($0);"
+    // "body": "System.out.println(\"$0\");"
+  },
+  // "pp": {
+  //   "prefix": "pp",
+  //   "body": "System.out.print($0);"
+  // },
+  // "pf": {
+  //   "prefix": "pf",
+  //   // System.out.printf("n=%d, hex=%08x\n", n, n);
+  //   "body": "System.out.printf(\"$0\\n\");"
+  //   // "body": "System.out.printf(\"%.$0f\\n\");"
+  // },
+  "pf": {
+    "prefix": "pf",
+    "body": "${1|public final,private final,protected final|} "
+  },
+  // "so": {
+  //   "prefix": "so",
+  //   // naturals.map(n -> n.multiply(n)).limit(100).forEach(System.out::println);
+  //   // "body": "System.out."
+  //   "body": "System.out"
+  // },
+  "sop": {
+    "prefix": "sop",
+    // naturals.map(n -> n.multiply(n)).limit(100).forEach(System.out::println);
+    "body": "${1|System.out::println,System.out.print|}"
+    // "body": "${1|System.out.print,System.out::println|}"
+  },
+  "sb": {
+    "prefix": "sb",
+    "body": "${1|static byte,static boolean|} "
+  },
+  "pac": {
+    "prefix": "pac",
+    "body": "public abstract class "
+  },
+  "nb": {
+    "prefix": "nb",
+    // byte[] buffer = new byte[1000];
+    // byte[] inputt = new byte[] { (byte) 0xe4, (byte) 0xb8, (byte) 0xad };
+    //           new BigDecimal("0.1")
+    "body": "${1|new byte,new BigDecimal|}"
+  },
+  "nbo": {
+    "prefix": "nbo",
+    "body": "new BigInteger(1, $0)"
+  },
+  "ip": {
+    "prefix": "ip",
+    "body": "import "
+  },
+  "el": {
+    "prefix": "el",
+    "body": "else {\n\t$0\n}"
+  },
+  // "eif": {
+  //   "prefix": "eif",
+  //   "body": "else if ($0) {\n}"
+  // },
+  "wh": {
+    "prefix": "wh",
+    "body": "while ($0) {\n}"
+  },
+  "sy": {
+    "prefix": "sy",
+    // "body": "synchronized ($0) {\n}"
+    "body": "synchronized (${0:this}) {\n}"
+  },
+  "cl": {
+    "prefix": "cl",
+    // class Student extends Person {
+    // 继承类的时候 需要带括号才有提示
+    "body": "class $0 {\n}"
+  },
+  "e": {
+    "prefix": "e",
+    // "body": "${1|Exception,enum|} "
+    // "body": "${1|Exception,enum,extends|} "
+    // "body": "${1|enum,extends|} "
+    "body": "enum $0 {\n}"
+  },
+  "pe": {
+    "prefix": "pe",
+    "body": "public enum $0 {\n}"
+  },
+  "dow": {
+    "prefix": "dow",
+    "body": "do {\n} while ($0);"
+  },
+  "fop": {
+    "prefix": "fop",
+    // 占位符太多了也不好
+    "body": "for (int ${1:i} = 0; ${1:i} <$0; ${1:i}++) {\n}"
+  },
+  // "fopl": {
+  //   "prefix": "fopl",
+  //   // 占位符太多了也不好
+  //   "body": "for (long ${1:i} = 0; ${1:i} <$0; ${1:i}++) {\n}"
+  //   // "body": "for (long ${1:i} = ${2:0}; ${1:i} <$0; ${1:i}++) {\n}"
+  // },
+  "kb": {
+    "prefix": "kb",
+    "body": "break;"
+  },
+  "fv": {
+    "prefix": "fv",
+    "body": "for (var $0) {\n}"
+  },
+  "sw": {
+    "prefix": "sw",
+    "body": "switch ($0) {\n}"
+    // }; // 注意赋值语句要以;结束
+    // "body": "switch ($1) {$0}"
+    // "body": "switch ($0) {$1}"
+    // "body": "switch ($0)"
+  },
+  "y": {
+    "prefix": "y",
+    "body": "yield "
+  },
+  "cb": {
+    "prefix": "cb",
+    // "body": "case $0:\n\tbreak;"
+    "body": "case $1:\n\t$0\n\tbreak;"
+  },
+  "db": {
+    "prefix": "db",
+    "body": "default:\n\t$0\n\tbreak;"
+  },
+  "df": {
+    "prefix": "df",
+    // int type() default 0;
+    "body": "default "
+  },
+  "cj": {
+    "prefix": "cj",
+    "body": "case $0 -> "
+  },
+  "dj": {
+    "prefix": "dj",
+    "body": "default -> "
+  },
+  "sfi": {
+    "prefix": "sfi",
+    "body": "static final int "
+  },
+  "nl": {
+    "prefix": "nl",
+    // long[] array = new long[2000];
+    "body": "new long"
+  },
+  "sl": {
+    "prefix": "sl",
+    "body": "static long "
+  },
+  "fd": {
+    "prefix": "fd",
+    "body": "final double "
+  },
+  "v": {
+    "prefix": "v",
+    "body": "var "
+  },
+  "n": {
+    "prefix": "n",
+    "body": "new "
+  },
+  // "ns": {
+  //   "prefix": "ns",
+  //   "body": "new StringBuilder()"
+  // },
+  "bo": {
+    "prefix": "bo",
+    "body": "boolean "
+  },
+  "i": {
+    "prefix": "i",
+    "body": "int "
+  },
+  // "if": {
+  //   "prefix": "if",
+  //   "body": "if ($0) {\n}\n"
+  // },
+  "eif": {
+    "prefix": "eif",
+    "body": "else if ($0) {\n}\n"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  // set HTTPS_PROXY=http://127.0.0.1:10809
+  
+  // $env:https_proxy="http://127.0.0.1:10809"
+  // set HTTP_PROXY=http://127.0.0.1:10809
+  // "devBranch": {
+  //   "prefix": "devBranch",
+  //   "body": ["git commit -m 'done'", "git checkout -b dev"]
+  // }
+  // git add .&&git commit -m 'done'&&git branch
+  // git branch
+  // git add .&&git commit -m 'done'
+  // git add .;git commit -m 'done'
+  // git checkout master
+  // git merge dev
+  // git branch -d dev
+  // "removeBranch": {
+  //   "prefix": "removeBranch",
+  //   "body": ["git checkout master", "git merge dev\n", "git branch -d dev"]
+  // }
+}

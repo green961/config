@@ -1,0 +1,310 @@
+// 将键绑定放在此文件中以覆盖默认值
+[
+  //   {
+  //     "key": "ctrl+shift+a", // 不能用ctrl+a 在bash里面是跳到行首
+  //     "command": "workbench.action.terminal.selectAll",
+  //     "when": "terminalFocus"
+  //   },
+  {
+    "key": "ctrl+shift+a", // 不能用ctrl+a 在bash里面是跳到行首
+    "command": "workbench.action.terminal.selectAll"
+  },
+
+  {
+    "key": "ctrl+d",
+    "command": "editor.action.deleteLines",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+shift+k",
+    "command": "-editor.action.deleteLines",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  // {
+  //   "key": "ctrl+k ctrl+oem_5",
+  //   "command": "workbench.action.splitEditor"
+  // },
+  // {
+  //   "key": "ctrl+oem_5",
+  //   "command": "-workbench.action.splitEditor"
+  // },
+  {
+    "key": "ctrl+e",
+    "command": "editor.action.transformToLowercase",
+    "when": "textInputFocus"
+  },
+  // {
+  //   "key": "ctrl+k ctrl+e",
+  //   "command": "editor.action.transformToCamelcase",
+  //   "when": "textInputFocus"
+  // },
+  {
+    "key": "ctrl+oem_2",
+    "command": "-toggleExplainMode",
+    "when": "suggestWidgetVisible"
+  },
+  {
+    "key": "ctrl+k ctrl+m",
+    "command": "workbench.action.joinAllGroups"
+  },
+  {
+    "key": "ctrl+shift+l",
+    "command": "deleteAllLeft",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+shift+r",
+    "command": "deleteAllRight",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+m",
+    "command": "editor.action.joinLines",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "-expandLineSelection",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+alt+win+n",
+    "command": "-welcome.showNewFileEntries"
+  },
+  {
+    "key": "ctrl+alt+n",
+    "command": "explorer.newFile"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.debug.panel.action.clearReplAction",
+    "when": "inDebugRepl" // 只有在这里才能clear
+  },
+  {
+    "key": "ctrl+q",
+    "command": "-workbench.action.quickOpenView"
+  },
+  {
+    "key": "ctrl+q",
+    "command": "-workbench.action.quickOpenNavigateNextInViewPicker",
+    "when": "inQuickOpen && inViewsPicker"
+  },
+  {
+    "key": "alt+a",
+    "command": "toggleFindInSelection",
+    "when": "editorFocus"
+  },
+  {
+    "key": "alt+l",
+    "command": "-toggleFindInSelection",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+k ctrl+c",
+    "command": "workbench.action.terminal.kill",
+    "when": "terminalIsOpen"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "-workbench.action.files.newUntitledFile"
+  },
+  {
+    "key": "ctrl+o",
+    "command": "revealFileInOS"
+    // "when": "!editorFocus"
+  },
+  {
+    "key": "shift+alt+r",
+    "command": "-revealFileInOS",
+    "when": "!editorFocus"
+  },
+  {
+    "key": "ctrl+e",
+    "command": "-workbench.action.quickOpen"
+  },
+  {
+    "key": "ctrl+k ctrl+g",
+    "command": "editor.action.sourceAction",
+    "when": "editorTextFocus && editorLangId == 'java'"
+  },
+  {
+    "key": "ctrl+4",
+    "command": "workbench.panel.repl.view.focus"
+    // "when": "workbench.panel.repl.view.active"
+  },
+  {
+    "key": "ctrl+oem_4",
+    "command": "problems.action.showSinglelineMessage",
+    "when": "focusedView == 'workbench.panel.markers.view'"
+  },
+  {
+    "key": "ctrl+oem_6",
+    "command": "problems.action.showMultilineMessage",
+    "when": "focusedView == 'workbench.panel.markers.view'"
+  },
+  {
+    "key": "alt+space",
+    "command": "-workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && terminalShellIntegrationEnabled && !accessibilityModeEnabled && terminalShellType == 'pwsh'"
+  },
+  {
+    "key": "ctrl+4",
+    "command": "-workbench.action.focusFourthEditorGroup"
+  },
+  {
+    "key": "f9",
+    "command": "-editor.debug.action.toggleBreakpoint",
+    "when": "debuggersAvailable && editorTextFocus"
+  },
+  {
+    "key": "ctrl+k ctrl+r",
+    "command": "-workbench.action.keybindingsReference"
+  },
+  {
+    "key": "ctrl+r",
+    "command": "-workbench.action.reloadWindow",
+    "when": "isDevelopment"
+  },
+  {
+    "key": "ctrl+shift+oem_comma",
+    "command": "workbench.action.debug.callStackUp",
+    "when": "inDebugMode"
+    // "when": "!editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+oem_period",
+    "command": "workbench.action.debug.callStackDown",
+    "when": "inDebugMode"
+  },
+  {
+    "key": "shift+alt+c",
+    "command": "-copyFilePath",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+y",
+    "command": "-redo"
+  },
+  {
+    "key": "ctrl+shift+u",
+    "command": "editor.action.transformToUppercase",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+u",
+    "command": "editor.action.transformToTitlecase",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+t",
+    "command": "editor.action.previousMatchFindAction",
+    "when": "editorFocus"
+  },
+  {
+    "key": "shift+f3",
+    "command": "-editor.action.previousMatchFindAction",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+m",
+    "command": "-editor.action.toggleTabFocusMode"
+  },
+
+  {
+    "key": "ctrl+s",
+    "command": "-workbench.action.files.save"
+  },
+  {
+    // "key": "ctrl+k y",
+    "key": "ctrl+shift+o",
+    "command": "workbench.action.files.save"
+    // "when": "editorTextFocus"
+  },
+
+  {
+    "key": "ctrl+k ctrl+shift+s",
+    "command": "-workbench.action.files.saveWithoutFormatting"
+  },
+  {
+    "key": "ctrl+s",
+    "command": "workbench.action.files.saveWithoutFormatting",
+    "when": "editorTextFocus"
+  },
+
+  {
+    "key": "ctrl+g",
+    "command": "-workbench.action.gotoLine"
+  },
+  {
+    "key": "alt+n",
+    "command": "explorer.newFolder"
+  },
+  {
+    "key": "shift+alt+c",
+    "command": "copyFilePath"
+  },
+  {
+    "key": "shift+alt+c",
+    "command": "-copyFilePath",
+    "when": "!editorFocus"
+  },
+  {
+    "key": "ctrl+6",
+    "command": "workbench.action.output.toggleOutput",
+    "when": "workbench.panel.output.active"
+  },
+  {
+    "key": "ctrl+shift+u",
+    "command": "-workbench.action.output.toggleOutput",
+    "when": "workbench.panel.output.active"
+  },
+  {
+    "key": "ctrl+home",
+    // 不要移除, 用于焦点在搜索框的时候使用`cursorTop`(跳到文档开始处,从头开始搜)
+    "command": "cursorTop"
+  },
+  {
+    "key": "ctrl+home",
+    "command": "-cursorTop",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+alt+t",
+    "command": "workbench.view.extension.test"
+  },
+  {
+    "key": "ctrl+k ctrl+r",
+    "command": "keybindings.editor.resetKeybinding",
+    "when": "inKeybindings && keybindingFocus"
+  },
+  {
+    "key": "ctrl+k ctrl+p",
+    "command": "-workbench.action.showAllEditors"
+  },
+  {
+    "key": "ctrl+shift+r",
+    "command": "-workbench.view.extension.thunder-client"
+  },
+  {
+    "key": "ctrl+k f",
+    "command": "-workbench.action.closeFolder",
+    "when": "emptyWorkspaceSupport && workbenchState != 'empty'"
+  },
+  {
+    "key": "ctrl+k ctrl+a",
+    "command": "workbench.debug.viewlet.action.toggleBreakpointsActivatedAction"
+  },
+  {
+    "key": "ctrl+k ctrl+d",
+    "command": "-editor.action.moveSelectionToNextFindMatch",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+k ctrl+d",
+    "command": "workbench.debug.viewlet.action.removeAllBreakpoints"
+  },
+  {
+    "key": "ctrl+k ctrl+q",
+    "command": "-workbench.action.navigateToLastEditLocation"
+  }
+]

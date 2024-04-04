@@ -1,0 +1,354 @@
+{
+  // "pcm": {
+  //   "prefix": "pcm",
+  //   "body": "pub(crate) mod "
+  // },
+  // "pcf": {
+  //   "prefix": "pcf",
+  //   "body": "pub(crate) fn "
+  // },
+  "pt": {
+    "prefix": "pt",
+    "body": "pub trait "
+  },
+  "pfn": {
+    "prefix": "pfn",
+    "body": "pub fn new($0)"
+  },
+  "pfv": {
+    "prefix": "pfv",
+    "body": "pub fn value(&self) ->"
+  },
+  // "re": {
+  //   "prefix": "re",
+  //   "body": "Result<$0>"
+  // },
+  "su": {
+    "prefix": "su",
+    "body": "super::"
+  },
+  "fn": {
+    // 在全局作用域时会被自带的抢先
+    "prefix": "fn",
+    "body": "fn $1($0) {\n}"
+  },
+  "l": {
+    "prefix": "l",
+    "body": "loop {\n\t$0\n}"
+  },
+  "pf": {
+    "prefix": "pf",
+    "body": "pub fn $1($0) {\n}"
+  },
+  //   "u": {
+  //     "prefix": "u",
+  //     "body": "use "
+  //   },
+
+  // "a": {
+  //   "prefix": "a",
+  //   "body": "dick"
+  // },
+  "us": {
+    "prefix": "us",
+    // use std::io;
+    // use std::cmp::Ordering;
+    "body": "use std::"
+    // "body": "use std::io::{$0};"
+  },
+  "jt": {
+    "prefix": "jt",
+    // Coin::Penny => 1,
+    // "body": "$1 => $0"
+    "body": "$0 => "
+  },
+  "ie": {
+    "prefix": "ie",
+    "body": "if $0 else "
+  },
+  "fi": {
+    "prefix": "fi",
+
+    "body": "for $0 in $1 {\n}"
+  },
+  "if": {
+    "prefix": "if",
+    "body": "if $0 {\n}"
+  },
+  "il": {
+    "prefix": "il",
+    "body": "if let $0 {\n}"
+  },
+
+  "eif": {
+    "prefix": "eif",
+    "body": "else if $0 {\n}"
+  },
+  "el": {
+    "prefix": "el",
+    "body": "else {\n\t$0\n}"
+  },
+  "k": {
+    "prefix": "k",
+    "body": "=> "
+  },
+  // "n": {
+  //   "prefix": "n",
+  //   "body": "fuck"
+  // },
+  "o": {
+    "prefix": "o",
+    "body": "Option<$0>"
+  },
+  "so": {
+    "prefix": "so",
+    // Some(i) => Some(i + 1),
+    "body": "Some($0)"
+  },
+  "j": {
+    "prefix": "j",
+    "body": "-> "
+  },
+  "jo": {
+    "prefix": "jo",
+    "body": "-> Option<$0>"
+  },
+  "jb": {
+    "prefix": "jb",
+    "body": "-> bool"
+  },
+
+  "ju": {
+    "prefix": "ju",
+    "body": "-> ${1|usize,u8,u32|}"
+  },
+  "js": {
+    "prefix": "js",
+    // "body": "-> ${1|&str,&String,String,Self|}" Self不能放后面
+    "body": "-> ${1|Self,&str,&String,String|}"
+  },
+  "z": {
+    "prefix": "z",
+    "body": ";"
+  },
+  "u": {
+    "prefix": "u",
+    "body": "usize"
+  },
+
+  "f": {
+    "prefix": "f",
+    "body": "false"
+  },
+  "t": {
+    "prefix": "t",
+    "body": "true"
+  },
+  "lm": {
+    "prefix": "lm",
+    "body": "let mut "
+  },
+  "n": {
+    "prefix": "n",
+    "body": "None"
+  },
+  "s": {
+    "prefix": "s",
+    // let mut s = String::from("hello");
+    // fn takes_ownership(some_string: String) {
+    "body": "String"
+  },
+  "m": {
+    "prefix": "m",
+    "body": "&mut "
+  },
+
+  "ms": {
+    "prefix": "ms",
+    "body": "&mut String"
+  },
+  "oc": {
+    "prefix": "oc",
+    "body": "Option<char>"
+  },
+  "bo": {
+    "prefix": "bo",
+    "body": "bool"
+  },
+  "b": {
+    "prefix": "b",
+    "body": "Box<dyn Error>"
+  },
+
+  "c": {
+    "prefix": "c",
+    "body": "const "
+  },
+  "ch": {
+    "prefix": "ch",
+    "body": "char"
+  },
+  "oo": {
+    "prefix": "oo",
+    "body": "Ok($0) => "
+  },
+  "ooo": {
+    "prefix": "ooo",
+    // Ok(_) => Ok(username),
+    "body": "Ok(${1:_}) => Ok($0),"
+  },
+  "er": {
+    "prefix": "er",
+    "body": "Err($0) => "
+  },
+  "err": {
+    "prefix": "err",
+    // Err(e) => return Err(e),
+    "body": "Err(${1:e}) =>$0 Err(${1:e})"
+  },
+  "r": {
+    "prefix": "r",
+    "body": "return "
+  },
+  "ps": {
+    "prefix": "ps",
+    "body": "pub struct "
+  },
+  "sc": {
+    "prefix": "sc",
+    // struct Point(i32, i32, i32);
+    "body": "struct "
+  },
+  "th": {
+    "prefix": "th",
+    // fn square(size: u32) -> Self { 大写
+    "body": "self"
+  },
+  "dd": {
+    "prefix": "dd",
+    // "body": "#[derive(Debug)]\n" 有可能是在上方补充
+    "body": "#[derive(Debug)]"
+  },
+  "p": {
+    "prefix": "p",
+    // Ordering::Less => println!("Too small!"),
+    "body": "println!(\"$0\")"
+  },
+  "pp": {
+    "prefix": "pp",
+    // "body": "println!(\"{:?}\", $0)"
+    "body": "println!(\"$0{:$1?}\", )"
+  },
+  "v": {
+    "prefix": "v",
+    "body": "Vec<$0>"
+  },
+  //   "n": {
+  //   "prefix": "n",
+  //   // ::后面用不了snippet
+  //   // let mut writer = BufWriter::new(stdout.lock());
+  //   "body": "new"
+  // },
+
+  "bn": {
+    "prefix": "bn",
+    // let mut writer = BufWriter::new(stdout.lock());
+    "body": "BufWriter::new($0);"
+  },
+  "vn": {
+    "prefix": "vn",
+    "body": "Vec::new();"
+  },
+  "hn": {
+    "prefix": "hn",
+    "body": "HashMap::new();"
+  },
+  "sn": {
+    "prefix": "sn",
+    "body": "String::new();"
+  },
+
+  "sf": {
+    "prefix": "sf",
+
+    // toast:    String::from(toast),
+    // let  aa = String::from("");
+    // username: String::from("someusername123"),
+
+    "body": "String::from($0)"
+  },
+  "i": {
+    "prefix": "i",
+    // Int(i32),
+    // SpreadsheetCell::Int(3),
+    "body": "Int($0)"
+    // "body": "Int(i32)"
+  },
+  // "is": {
+  //   "prefix": "is",
+  //   // 为了可自动导入 此snippet不提供
+  //   "body": "io::stdin()\n\t."
+  // },
+  "fl": {
+    "prefix": "fl",
+    // SpreadsheetCell::Float(10.12),
+    "body": "Float($0)"
+  },
+  "kb": {
+    "prefix": "kb",
+    // break counter * 2;
+    "body": "break "
+  },
+  "pe": {
+    "prefix": "pe",
+    "body": "pub enum "
+  },
+  "pm": {
+    "prefix": "pm",
+    "body": "pub mod "
+  },
+  "uc": {
+    "prefix": "uc",
+    "body": "use crate::"
+  },
+  "puc": {
+    "prefix": "puc",
+    "body": "pub use crate::"
+  },
+  "e": {
+    "prefix": "e",
+    "body": "enum $1 {\n\t$0\n}"
+  },
+  // "se": {
+  //   "prefix": "se",
+  //   "body": "|error| {\n\t$0\n}"
+  // },
+  "se": {
+    "prefix": "se",
+    // impl Rectangle {
+    //   fn area(&self) -> u32 {    前面带&
+    //     self.width * self.height 后面带.
+    //   }
+    // }
+
+    "body": "self"
+  },
+  "ma": {
+    "prefix": "ma",
+
+    // "body": "match $1 {\n\t$0\n};" 需要返回值的时候不能带`;`
+    "body": "match $1 {\n\t$0\n}"
+  },
+  "fm": {
+    "prefix": "fm",
+    "body": "fn main() {\n\t$0\n}"
+  },
+  "fmc": {
+    "prefix": "fmc",
+    "body": "fn main() {\n$CLIPBOARD\n}"
+  },
+  "fms": {
+    "prefix": "fms",
+    "body": "fn main() {\n$TM_SELECTED_TEXT\n}"
+  }
+}

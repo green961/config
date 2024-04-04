@@ -1,0 +1,72 @@
+{
+  "h": {
+    "prefix": "h",
+    "body": "<br />\n"
+  },
+  "d": {
+    "prefix": "d",
+    "body": "<div>$0</div>"
+  },
+  "sp": {
+    "prefix": "sp",
+    // "body": "<${1|span,svg,path,div,pre,a|} $2>$0</$1>" a标签太短了
+    "body": "<${1|span,svg,path,div,pre|} $2>$0</$1>"
+  },
+  "sc": {
+    // self-closing tag
+    "prefix": "sc",
+    // "body": "<$1         ${0:/>}"
+    "body": "<$0   />"
+  },
+
+  "cz": {
+    "prefix": "c",
+    "body": "{{$0}}"
+  },
+  "s": {
+    "prefix": "s",
+    "body": "<strong>$0</strong>"
+  },
+
+  "fi": {
+    "prefix": "fi",
+    "body": "$0 in $1"
+  },
+  "t": {
+    "prefix": "t",
+    "body": "<template $0>\n</template>"
+  },
+
+  "tsi": {
+    "prefix": "tsi",
+    "body": "<Transition>\n\t$0\n</Transition>"
+  },
+  "iv": {
+    "prefix": "iv",
+    "body": "<input v-model=\"$0\" />"
+  },
+  "cl": {
+    "prefix": "cl",
+    "body": "<button   @click=\"$1\">$0</button>"
+  },
+  "r": {
+    "prefix": "r",
+    "body": "<br>"
+  },
+  "k": {
+    "prefix": "k",
+    "body": "&nbsp;"
+  },
+  "l": {
+    "prefix": "l",
+    "body": "&lt;"
+  },
+  "g": {
+    "prefix": "g",
+    "body": "&gt;"
+  },
+  "sl": {
+    "prefix": "sl",
+    "body": "<slot $0></slot>"
+  }
+}

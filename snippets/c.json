@@ -1,0 +1,146 @@
+{
+  "w": {
+    "prefix": "w",
+    "body": "while($0)"
+  },
+  "is": {
+    "prefix": "ls",
+    "body": "#include <stdio.h>\n"
+  },
+  "lg": {
+    "prefix": "lg",
+    "body": "#include <string.h>"
+  },
+  "ld": {
+    "prefix": "ld",
+    "body": "#include <stdarg.h>"
+  },
+  "le": {
+    "prefix": "le",
+    "body": "#include <errno.h>"
+  },
+  "sc": {
+    "prefix": "sc",
+    "body": "struct "
+  },
+  "t": {
+    "prefix": "t",
+    "body": "typedef "
+  },
+  "fl": {
+    "prefix": "fl",
+    "body": "#include <float.h>"
+  },
+  "l": {
+    "prefix": "l",
+    "body": "long "
+  },
+  "un": {
+    "prefix": "un",
+    "body": "union "
+  },
+  "ib": {
+    "prefix": "lb",
+    "body": "#include <stdlib.h>\n"
+  },
+  "ll": {
+    "prefix": "ll",
+    "body": "#include <limits.h>\n"
+  },
+  "lt": {
+    "prefix": "lt",
+    "body": "#include <time.h>"
+  },
+  "si": {
+    "prefix": "si",
+    "body": "sizeof($0)"
+  },
+  "it": {
+    "prefix": "lt",
+    "body": "#include <time.h>\n"
+  },
+  "e": {
+    "prefix": "e",
+    "body": "enum $0;"
+  },
+  "et": {
+    "prefix": "et",
+    "body": "extern "
+  },
+  "kb": {
+    "prefix": "kb",
+    "body": "break;"
+  },
+  "df": {
+    "prefix": "df",
+    "body": "default"
+  },
+  "de": {
+    "prefix": "de",
+    "body": "#define "
+  },
+  "c": {
+    "prefix": "c",
+    "body": "const "
+  },
+  "i": {
+    "prefix": "i",
+    "body": "int "
+  },
+  "u": {
+    "prefix": "u",
+    "body": "unsigned "
+  },
+  "s": {
+    "prefix": "st",
+    "body": "static "
+  },
+  "f": {
+    "prefix": "f",
+    "body": "float "
+  },
+  "for": {
+    "prefix": "fo",
+    "body": "for(int ${1:i}=0; ${1:i}<$0; ${1:i}++) {\n}"
+  },
+  "x": {
+    "prefix": "x",
+    "body": "%#X"
+  },
+  "ss": {
+    "prefix": "ss",
+    "body": "int len = sizeof($1)/sizeof($0);"
+  },
+  "sh": {
+    "prefix": "sh",
+    "body": "short "
+  },
+  "d": {
+    "prefix": "d",
+    "body": "double "
+  },
+  "m": {
+    "prefix": "m",
+    "body": "int main($0) {\n}"
+  },
+  "ch": {
+    "prefix": "ch",
+    "body": "char "
+  },
+  "vo": {
+    "prefix": "v",
+    "body": "void "
+  },
+  "p": {
+    "prefix": "p",
+    "body": "printf(\"$0\\n\"$1);"
+  },
+  "pp": {
+    "prefix": "pp",
+    "body": "printf($0);"
+  },
+  "r": {
+    "prefix": "r",
+    "body": "return "
+  }
+}

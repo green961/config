@@ -1,0 +1,59 @@
+{
+  // @media screen and (min-width:768px) {
+  //   .container {
+  //     width: 750px;
+  //   }
+  // }
+  // @media screen and (min-width:992px) {
+  //   .container {
+  //     width: 970px;
+  //   }
+  // }
+  // @media screen and (min-width:1200px) {
+  //   .container {
+  //     width: 1170px;
+  //   }
+  // }
+  "it": {
+    "prefix": "it",
+    "body": "!important"
+  },
+  "ts": {
+    "prefix": "ts",
+    "body": "transition: $0;"
+  },
+  "tt": {
+    "prefix": "t",
+    "body": "transform$0;"
+  },
+  "c": {
+    "prefix": "c",
+    "body": "background$0;"
+  },
+  "f": {
+    "prefix": "f",
+    "body": "font-size: $0px;"
+  },
+  "r": {
+    "prefix": "r",
+    "body": "border-radius: $0;"
+  },
+  "ps": {
+    "prefix": "ps",
+    "body": "position: $0;"
+  },
+  "cl": {
+    "prefix": "cl",
+    "body": "background: url($1) no-repeat 0px 0px;"
+  },
+  "x": {
+    "prefix": "x",
+    "body": [
+      "* {",
+      "\tmargin: 0;",
+      "\tpadding: 0;",
+      "\tbox-sizing: border-box;",
+      "}",
+    ]
+  }
+}

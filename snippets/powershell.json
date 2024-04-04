@@ -1,0 +1,14 @@
+{
+    "r": {
+        "prefix": "r",
+        "body": "return "
+    },
+    "fn": {
+        "prefix": "fn",
+        "body": "function $1 {\n\t$0\n}"
+    },
+    "f": {
+        "prefix": "f",
+        "body": "function $1($2) {\n\t$0\n}"
+    }
+}

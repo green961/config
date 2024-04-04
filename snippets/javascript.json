@@ -1,0 +1,379 @@
+// git log --pretty=oneline --abbrev-commit
+{
+  "tyc": {
+    "prefix": "tyc",
+
+    "body": "try {\n\t$0\n} catch (${1:error}) {\n\n}\n"
+  },
+
+  "ajr": {
+    "prefix": "ajr",
+    // "body": [";(async ($0) => {\n})()"]
+    "body": [";(async () => {\n\t$0\n})()"]
+  },
+
+  "co": {
+    "prefix": "co",
+    "body": "console."
+  },
+  "sw": {
+    "prefix": "sw",
+    "body": "switch ($1) {\n\tcase $0:\n\t\tbreak\n}"
+  },
+  "im": {
+    "prefix": "im",
+    "body": "import.meta"
+  },
+  "az": {
+    "prefix": "az",
+    "body": "a-zA-Z"
+  },
+  "afc": {
+    "prefix": "afc",
+    "body": [";(async function ($0) {\n})()"]
+  },
+  "fc": {
+    "prefix": "fc",
+    "body": [";(function ($0) {\n})()"]
+  },
+  // "kt": {
+  //   "prefix": "kt",
+  //   "body": [";($0)()"]
+  // },
+
+  "ed": {
+    "prefix": "ed",
+    "body": "export default "
+  },
+  // "fop": {
+  //   "prefix": "fop",
+  //   "body": "for (let ${1:i} = 0; ${1:i} <$0; ${1:i}++) {\n}"
+  // },
+  "fop": {
+    "prefix": "fop",
+    // for (pos = start + 1; pos <= max; pos++) { 无 let
+    // for (pos = start + 1; pos <= max; pos++) { 可能是 <=
+    // for (let i = 1; i < params.length; i++) {  从 1 开始
+
+    // 占位符太多了也不好
+    "body": "for (let ${1:i} = 0; ${1:i} <$0; ${1:i}++) {\n}"
+    // "body": "for (${1|let , |}${2:i} = ${3:0}; ${2:i} <$0; ${2:i}++) {\n}"
+  },
+
+  "foj": {
+    "prefix": "foj",
+    // import { readFileSync } from 'fs'; 冲突
+    // for (var i = stack.length - 1; i >= 0; i--) {
+    "body": "for (let ${1:i} = $2; ${1:i} >$0; ${1:i}--) {\n}"
+  },
+  "edf": {
+    "prefix": "edf", // 带上括号防手快, $1有时候需要转大写
+    "body": "export default function $1($0) {\n}"
+  },
+
+  "of": {
+    "prefix": "of",
+    // "body": "$1 ($2) {\n\t\n}," 类方法不必加`,` 极少见
+    // "body": "$1 ($0) {\n\t\n}" 跟 if 一样不要空行
+    "body": "$1($0) {\n}" // js没有泛型, $1紧接括号
+  },
+  "aof": {
+    "prefix": "aof",
+    "body": "async $1 ($2) {\n\t$0\n}"
+  },
+  // "tte": {
+  //   "prefix": "tte",
+  //   "body": ["console.time()", "console.timeEnd()"]
+  //   // "body": "{$0}: $1"
+  // },
+  "z": {
+    "prefix": "z",
+    "body": "process.stderr.write(`$0\\n`)"
+    // "body": ["/*\n$0", "*/"]
+  },
+
+  // "set proxy": {
+  //   "prefix": "z",
+  //   "body": "${1|set HTTPS_PROXY=http://127.0.0.1:10809,export https_proxy=\"http://127.0.0.1:10809\"|}"
+  // },
+  "ef": {
+    "prefix": "ef",
+    "body": "export ${1|function,async function|} $0 {\n}"
+  },
+  "st": {
+    "prefix": "st",
+    "body": "static "
+  },
+  "tf": {
+    "prefix": "tf",
+    "body": "? true : false"
+  },
+  // "cj": {
+  //   "prefix": "cj",
+  //   // const [editor, ...args] = guessEditor(specifiedEditor)
+  //   // "body": "const $0 = $1" 必须要有大括号, 才会有变量提示
+  //   "body": "const $0 = $1"
+  // },
+  "cj": {
+    "prefix": "cj",
+    // [] 没意义, 数组解构又没有属性提示
+    "body": "const {$0} = $1"
+    // "body": "${1|const,let|} {$0} = $2"
+  },
+
+  "ss": {
+    "prefix": "ss",
+    // "${TM_FILENAME/(.*)/${1:/upcase}/}"
+    // $1   ${2:${1/(.*)/${1:/capitalize}/}}
+    // "body": "const [$1, set${1/(.*)/${1:/capitalize}/}] = "
+    "body": "const [$1, ${1/(.*)/set${1:/capitalize}/}] = "
+  },
+  "cac": {
+    "prefix": "cac",
+    // } catch {
+    "body": "try {\n\t$0\n} catch ${1:(error)} {\n\n}\n"
+    // "body": "try {\n\t$0\n} catch ${1|(error), |} {\n\n}\n"
+  },
+  "cacf": {
+    "prefix": "cacf",
+    "body": "try {\n\t$1\n} catch (error) {\n\n} finally {\n\n}\n"
+  },
+
+  "n": {
+    "prefix": "n",
+    "body": "new "
+  },
+  "so": {
+    "prefix": "so",
+    "body": "setTimeout($0)"
+  },
+  "while": {
+    "prefix": "wh",
+    "body": "while($0)"
+  },
+  // "continue": {
+  //   "prefix": "co",
+  //   "body": "continue"
+  // },
+  "m": {
+    "prefix": "m",
+    "body": "$`$0`"
+  },
+  "ub": {
+    "prefix": "ub",
+    // "body": "#!/usr/bin/env node"
+    "body": "#!/usr/bin/env ${1|node,zx|}"
+  },
+  // node --experimental-specifier-resolution=node
+  "tu": {
+    "prefix": "t",
+    "body": "true"
+  },
+  "fo": {
+    "prefix": "fo",
+    "body": "for (const $1 of $0) {\n}"
+  },
+
+  "if": {
+    "prefix": "if",
+    // "body": "if ($0) {\n\t\n}"
+    "body": "if ($0) {\n}"
+  },
+  "el": {
+    "prefix": "el",
+    "body": "else {\n\t$0\n}"
+  },
+  "eif": {
+    "prefix": "eif",
+    "body": "else if ($0) {\n}"
+  },
+  "tn": {
+    "prefix": "tn",
+    // throw err;
+    // throw new Error('cannot get uid or gid')
+    "body": "throw ${1:new Error}"
+  },
+
+  "async": {
+    "prefix": "a",
+    "body": "async "
+  },
+  "default": {
+    "prefix": "df",
+    "body": "default "
+  },
+  "tc": {
+    "prefix": "tc",
+    "body": "// @ts-check\n"
+  },
+  "cl": {
+    "prefix": "cl",
+    "body": "class "
+  },
+  "export": {
+    "prefix": "ep",
+    "body": "export {$0} from '$1'"
+  },
+  "import * as": {
+    "prefix": "ia",
+    "body": "import * as $0 from '$1'"
+  },
+
+  "i": {
+    "prefix": "i",
+
+    // import 'zx/globals' 带引号
+    // import('./chalk.js')  可此例是先括号再引号
+
+    "body": "import " // 不紧挨着, 引号才能成对出现
+  },
+  "ei": {
+    "prefix": "e",
+    // Object.assign(exports, fs)
+    "body": "export"
+  },
+  "ag": {
+    "prefix": "ag",
+    "body": "...args"
+  },
+
+  "aj": {
+    "prefix": "aj",
+    "body": ["async ($1) => {$0}"]
+  },
+  // "de": {
+  //   "prefix": "de",
+  //   "body": "debugger"
+  // },
+  "ajn": {
+    "prefix": "ajn",
+    // "body": [";(${0:async} () => {\n})()"]
+    "body": [";(async ($0) => {\n})()"]
+  },
+  "fn": {
+    "prefix": "fn",
+    "body": ["function $1($0) {\n}"]
+  },
+  "af": {
+    "prefix": "af",
+    "body": ["async function $1($0) {\n}"]
+  },
+  "p": {
+    "prefix": "p",
+    "body": "Promise"
+  },
+  "ps": {
+    "prefix": "ps",
+    "body": ["new Promise((${1|resolve\\, reject,resolve,done, |}$2) => {\n\t$0", "})"]
+  },
+  // "ct": {
+  //   "prefix": "ct",
+  //   "body": "constructor($0) {\n}"
+  // },
+  "ai": {
+    "prefix": "ai",
+    "body": "await "
+  },
+  "import": {
+    "prefix": "ip",
+    // import rule, { RULE_NAME } from './generic-spacing'
+    // "body": "import {$0} from '$1'"  利用 ctrl+shift+\ 跳到大括号前补充, 会变成下面这样
+    // import mongoose from "mongoose"{Schema} from 'mongoose'
+
+    // "body": "import $0 from '$1'" // 需要占位符
+    "body": "import ${0:path} from '$1'"
+  },
+  "uf": {
+    "prefix": "uf",
+    "body": ["(", "\t<>", "\t\t$0", "\t</>", ")"]
+  },
+  "module.exports": {
+    "prefix": "me",
+    "body": "module.exports = "
+  },
+  "re": {
+    "prefix": "re",
+    "body": "require('$0')"
+  },
+  "s": {
+    "prefix": "s",
+    "body": "string"
+  },
+  // "dp": {
+  //   "prefix": "dp",
+  //   "body": ["/** @param {$0} $1 */"]
+  // },
+  "import type": {
+    "prefix": "ipt",
+    "body": "import type {$0} from '$1'"
+  },
+  "ec": {
+    "prefix": "ec",
+    "body": "export const "
+  },
+  "require same name": {
+    "prefix": "cr",
+    "body": ["const {$0} = require('$1')"]
+  },
+  "kb": {
+    "prefix": "kb",
+    "body": "break"
+  },
+  "=>": {
+    "prefix": "jt",
+    "body": "($1) => $0"
+  },
+  "const": {
+    "prefix": "c",
+    "body": "const $0"
+  },
+  "extends": {
+    "prefix": "et",
+    "body": "extends "
+  },
+  "console.log": {
+    "prefix": "l",
+    "body": ["console.log($0)"],
+    "description": "Log output to console"
+  },
+  "ud": {
+    "prefix": "ud",
+    "body": "undefined"
+  },
+  "rt": {
+    "prefix": "rt",
+    "body": "return true"
+  },
+  "u": {
+    "prefix": "u",
+    "body": "undefined"
+  },
+  "function": {
+    "prefix": "fu",
+    "body": "function "
+  },
+  "f": {
+    "prefix": "f",
+    "body": "false"
+  },
+  "ob": {
+    "prefix": "o",
+    "body": "Object."
+  },
+  "typeof": {
+    "prefix": "tp",
+    "body": "typeof "
+  },
+  "return": {
+    "prefix": "r",
+    "body": "return "
+  },
+  "t": {
+    "prefix": "th",
+    "body": "this"
+  }
+  // "严格模式": {
+  //   "prefix": "us",
+  //   "body": "'use strict'"
+  // }
+}
